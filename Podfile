@@ -6,6 +6,5 @@ target 'MoneyBox' do
   use_frameworks!
 
   # Pods for MoneyBox
-	pod 'SnapKit', '~> 5.0.0'
 	pod 'SwiftGen'	
 end

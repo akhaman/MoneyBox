@@ -3,14 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C7AAB60D06990942443ABAC /* Pods_MoneyBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E806D7E7CEE1D97FF098D99D /* Pods_MoneyBox.framework */; };
+		77373F9E39E6E75BB55A1789 /* Pods_MoneyBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796E2846640FB007D83AC145 /* Pods_MoneyBox.framework */; };
 		CE1B2C4826F0B7E100A672F3 /* ExpensesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B2C4726F0B7E100A672F3 /* ExpensesCoordinator.swift */; };
 		CE1B2C4A26F0B85B00A672F3 /* BudgetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B2C4926F0B85B00A672F3 /* BudgetCoordinator.swift */; };
 		CE1B2C4F26F10CDA00A672F3 /* ExpenseCreationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B2C4E26F10CDA00A672F3 /* ExpenseCreationCoordinator.swift */; };
+		CE63130726F4FE94009A9EB2 /* DITranquillity in Frameworks */ = {isa = PBXBuildFile; productRef = CE63130626F4FE94009A9EB2 /* DITranquillity */; };
 		CE685DEF26F07FDA0065CD77 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE685DEE26F07FDA0065CD77 /* Router.swift */; };
 		CE685DF126F07FED0065CD77 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE685DF026F07FED0065CD77 /* Presentable.swift */; };
 		CE685DF326F08ADE0065CD77 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE685DF226F08ADE0065CD77 /* MainTabBarCoordinator.swift */; };
@@ -47,6 +48,7 @@
 		CED1644026E949ED0019E451 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1643F26E949ED0019E451 /* Button.swift */; };
 		CED1644226E952020019E451 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1644126E952020019E451 /* CategoryCell.swift */; };
 		CED1644426E952700019E451 /* ExpensesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1644326E952700019E451 /* ExpensesList.swift */; };
+		CEDA05EA26F512B600829B02 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEDA05E926F512B600829B02 /* SnapKit */; };
 		CEEC38E326EA7B89006E1234 /* DailyReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC38E226EA7B89006E1234 /* DailyReviewCell.swift */; };
 		CEEC38E626EA7BE0006E1234 /* DailyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC38E526EA7BE0006E1234 /* DailyHeaderView.swift */; };
 		CEEC38E826EA846C006E1234 /* DailyReviewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC38E726EA846C006E1234 /* DailyReviewListView.swift */; };
@@ -62,7 +64,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		903FDCD39E4A9538F7C7A4B4 /* Pods-MoneyBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyBox.release.xcconfig"; path = "Target Support Files/Pods-MoneyBox/Pods-MoneyBox.release.xcconfig"; sourceTree = "<group>"; };
+		16F448DAD015A4D640A772F0 /* Pods-MoneyBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyBox.debug.xcconfig"; path = "Target Support Files/Pods-MoneyBox/Pods-MoneyBox.debug.xcconfig"; sourceTree = "<group>"; };
+		796E2846640FB007D83AC145 /* Pods_MoneyBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		859C0B15C04A7F4EFFF1516B /* Pods-MoneyBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyBox.release.xcconfig"; path = "Target Support Files/Pods-MoneyBox/Pods-MoneyBox.release.xcconfig"; sourceTree = "<group>"; };
 		CE1B2C4726F0B7E100A672F3 /* ExpensesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesCoordinator.swift; sourceTree = "<group>"; };
 		CE1B2C4926F0B85B00A672F3 /* BudgetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetCoordinator.swift; sourceTree = "<group>"; };
 		CE1B2C4E26F10CDA00A672F3 /* ExpenseCreationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCreationCoordinator.swift; sourceTree = "<group>"; };
@@ -116,8 +120,6 @@
 		CEEC38F726EB44A4006E1234 /* PlansTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansTableCell.swift; sourceTree = "<group>"; };
 		CEEFAABD26E9205F005169C7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.yaml; };
 		CEEFAAC626E92F61005169C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E3753BEBEF94602DF0F9C39C /* Pods-MoneyBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyBox.debug.xcconfig"; path = "Target Support Files/Pods-MoneyBox/Pods-MoneyBox.debug.xcconfig"; sourceTree = "<group>"; };
-		E806D7E7CEE1D97FF098D99D /* Pods_MoneyBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,20 +127,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C7AAB60D06990942443ABAC /* Pods_MoneyBox.framework in Frameworks */,
+				CE63130726F4FE94009A9EB2 /* DITranquillity in Frameworks */,
+				CEDA05EA26F512B600829B02 /* SnapKit in Frameworks */,
+				77373F9E39E6E75BB55A1789 /* Pods_MoneyBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		43E52E837E05B997F23FC328 /* Pods */ = {
+		2360C5B826BB913082F72EE0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E3753BEBEF94602DF0F9C39C /* Pods-MoneyBox.debug.xcconfig */,
-				903FDCD39E4A9538F7C7A4B4 /* Pods-MoneyBox.release.xcconfig */,
+				16F448DAD015A4D640A772F0 /* Pods-MoneyBox.debug.xcconfig */,
+				859C0B15C04A7F4EFFF1516B /* Pods-MoneyBox.release.xcconfig */,
 			);
+			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		58114ED16E7299977E27AD73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				796E2846640FB007D83AC145 /* Pods_MoneyBox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CE685DED26F07FC80065CD77 /* Coordinator */ = {
@@ -157,8 +170,8 @@
 				CEEFAABD26E9205F005169C7 /* swiftgen.yml */,
 				CEC652D026E8E95E007099B9 /* MoneyBox */,
 				CEC652CF26E8E95E007099B9 /* Products */,
-				43E52E837E05B997F23FC328 /* Pods */,
-				E9B82FB4703E8245E59DEC25 /* Frameworks */,
+				2360C5B826BB913082F72EE0 /* Pods */,
+				58114ED16E7299977E27AD73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -410,14 +423,6 @@
 			path = DailyReview;
 			sourceTree = "<group>";
 		};
-		E9B82FB4703E8245E59DEC25 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E806D7E7CEE1D97FF098D99D /* Pods_MoneyBox.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -425,18 +430,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEC652E226E8E95F007099B9 /* Build configuration list for PBXNativeTarget "MoneyBox" */;
 			buildPhases = (
-				7B2AC4F67950485162D27FAA /* [CP] Check Pods Manifest.lock */,
+				9493A056D2CEA5FFDDB89C99 /* [CP] Check Pods Manifest.lock */,
 				CEEFAABC26E91E88005169C7 /* SwiftGen */,
 				CEC652CA26E8E95E007099B9 /* Sources */,
 				CEC652CB26E8E95E007099B9 /* Frameworks */,
 				CEC652CC26E8E95E007099B9 /* Resources */,
-				C3B24599C72F7C031FF67014 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MoneyBox;
+			packageProductDependencies = (
+				CE63130626F4FE94009A9EB2 /* DITranquillity */,
+				CEDA05E926F512B600829B02 /* SnapKit */,
+			);
 			productName = MoneyBox;
 			productReference = CEC652CE26E8E95E007099B9 /* MoneyBox.app */;
 			productType = "com.apple.product-type.application";
@@ -464,6 +472,10 @@
 				Base,
 			);
 			mainGroup = CEC652C526E8E95E007099B9;
+			packageReferences = (
+				CE63130526F4FE93009A9EB2 /* XCRemoteSwiftPackageReference "DITranquillity" */,
+				CEDA05E826F512B600829B02 /* XCRemoteSwiftPackageReference "SnapKit.git" */,
+			);
 			productRefGroup = CEC652CF26E8E95E007099B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -488,7 +500,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7B2AC4F67950485162D27FAA /* [CP] Check Pods Manifest.lock */ = {
+		9493A056D2CEA5FFDDB89C99 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -508,23 +520,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C3B24599C72F7C031FF67014 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MoneyBox/Pods-MoneyBox-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MoneyBox/Pods-MoneyBox-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyBox/Pods-MoneyBox-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CEEFAABC26E91E88005169C7 /* SwiftGen */ = {
@@ -736,7 +731,7 @@
 		};
 		CEC652E326E8E95F007099B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3753BEBEF94602DF0F9C39C /* Pods-MoneyBox.debug.xcconfig */;
+			baseConfigurationReference = 16F448DAD015A4D640A772F0 /* Pods-MoneyBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -756,7 +751,7 @@
 		};
 		CEC652E426E8E95F007099B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 903FDCD39E4A9538F7C7A4B4 /* Pods-MoneyBox.release.xcconfig */;
+			baseConfigurationReference = 859C0B15C04A7F4EFFF1516B /* Pods-MoneyBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -796,6 +791,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE63130526F4FE93009A9EB2 /* XCRemoteSwiftPackageReference "DITranquillity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivlevAstef/DITranquillity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.3;
+			};
+		};
+		CEDA05E826F512B600829B02 /* XCRemoteSwiftPackageReference "SnapKit.git" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE63130626F4FE94009A9EB2 /* DITranquillity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE63130526F4FE93009A9EB2 /* XCRemoteSwiftPackageReference "DITranquillity" */;
+			productName = DITranquillity;
+		};
+		CEDA05E926F512B600829B02 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEDA05E826F512B600829B02 /* XCRemoteSwiftPackageReference "SnapKit.git" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CEC652C626E8E95E007099B9 /* Project object */;
 }
