@@ -8,13 +8,12 @@
 import UIKit
 
 class NavigationCoordinator: Coordinator {
-    
     let router: Routable
-    
+
     init(router: Routable) {
         self.router = router
     }
-    
+
     override var toPresent: UIViewController? {
         router.toPresent
     }

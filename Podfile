@@ -6,5 +6,6 @@ target 'MoneyBox' do
   use_frameworks!
 
   # Pods for MoneyBox
-	pod 'SwiftGen'	
+	pod 'SwiftGen'
+  pod 'SwiftLint'
 end

@@ -12,19 +12,18 @@ protocol ExpenseCreationFlow: Coordinatable {
 }
 
 final class ExpenseCreationFlowImpl: NavigationCoordinator, ExpenseCreationFlow {
-    
     var finishFlow: VoidClosure?
     private let container: DIContainer
-    
+
     init(router: Routable, container: DIContainer) {
         self.container = container
         super.init(router: router)
     }
-    
+
     override func start() {
         showSelectCategory()
     }
-    
+
     private func showSelectCategory() {
         let module: SelectCategoryModule = container.resolve()
         module.onSelectCategory = { _ in }

@@ -16,7 +16,6 @@ enum HomeListRowModel {
 }
 
 class DailyReviewListView: UIView {
-    
     // MARK: - UI
 
     private lazy var tableView: UITableView = {
@@ -27,16 +26,16 @@ class DailyReviewListView: UIView {
         tableView.backgroundColor = .clear
         tableView.delaysContentTouches = false
         tableView.register(DailyReviewCell.self, HeaderAmountCell.self, PlansTableCell.self)
-        
+
         addSubview(tableView)
         tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
         return tableView
     }()
-    
+
     // MARK: - Properties
-    
-    private var sections = [HomeListSection]()
-    
+
+    private var sections: [HomeListSection] = []
+
     // MARK: - Updating
 
     @discardableResult
@@ -50,19 +49,18 @@ class DailyReviewListView: UIView {
 // MARK: - UITableViewDataSource
 
 extension DailyReviewListView: UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         sections.count
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         sections[section].items.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = sections[indexPath.section].items[indexPath.item]
         let cell: UITableViewCell
-        
+
         switch item {
         case .monthAmount(let amount):
             cell = tableView.dequeue(HeaderAmountCell.self).update(with: amount)
@@ -71,7 +69,7 @@ extension DailyReviewListView: UITableViewDataSource {
         case .dailyExpenses(let expensesModel):
             cell = tableView.dequeue(DailyReviewCell.self).update(with: expensesModel)
         }
-        
+
         return cell
     }
 }
@@ -79,7 +77,6 @@ extension DailyReviewListView: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension DailyReviewListView: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = sections[indexPath.section].items[indexPath.item]
         switch item {
@@ -89,10 +86,10 @@ extension DailyReviewListView: UITableViewDelegate {
             expensesModel.onTap()
         }
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let item = sections[indexPath.section].items[indexPath.item]
-        
+
         switch item {
         case .monthAmount:
             return .automaticDimension

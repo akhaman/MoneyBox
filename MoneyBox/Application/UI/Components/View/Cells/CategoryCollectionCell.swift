@@ -8,22 +8,21 @@
 import UIKit
 
 class CategoryCollectionCell: UICollectionViewCell {
-    
     // MARK: - UI
-    
+
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
-        
+
         return imageView
     }()
-    
+
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = Colors.selected.color
         label.font = .systemFont(ofSize: 13, weight: .regular)
         return label
     }()
-    
+
     private lazy var stack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [imageView, titleLabel])
         stack.axis = .vertical
@@ -31,9 +30,9 @@ class CategoryCollectionCell: UICollectionViewCell {
         stack.spacing = 7
         return stack
     }()
-    
+
     // MARK: - Init
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         imageView.snp.makeConstraints { $0.size.equalTo(Layout.categoryCollectionItemImageSize) }
@@ -42,13 +41,13 @@ class CategoryCollectionCell: UICollectionViewCell {
             $0.center.equalToSuperview()
         }
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - Updating
-    
+
     @discardableResult
     func update(with model: CategoryCollectionCellModel) -> Self {
         imageView.image = model.icon

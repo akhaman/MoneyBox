@@ -14,9 +14,8 @@ struct PlanCellModel {
 }
 
 class PlanCell: CardCollectionCell {
-    
     // MARK: - UI
-    
+
     private lazy var iconImageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
@@ -29,7 +28,7 @@ class PlanCell: CardCollectionCell {
         label.textColor = Colors.selected.color
         return label
     }()
-    
+
     private lazy var stackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [iconImageView, titleLabel])
         stack.axis = .vertical
@@ -37,21 +36,21 @@ class PlanCell: CardCollectionCell {
         stack.spacing = 3
         return stack
     }()
-    
+
     // MARK: - Init
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         cardView.addSubview(stackView)
         stackView.snp.makeConstraints { $0.center.equalToSuperview() }
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - Updating
-    
+
     @discardableResult
     func update(with model: PlanCellModel) -> Self {
         iconImageView.image = model.iconImage

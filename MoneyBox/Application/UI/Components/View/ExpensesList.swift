@@ -8,7 +8,6 @@
 import UIKit
 
 class ExpensesList: UIView {
-    
     // MARK: - UI
 
     private lazy var tableView: UITableView = {
@@ -22,31 +21,31 @@ class ExpensesList: UIView {
         tableView.register(CategoryCell.self)
         return tableView
     }()
-    
+
     // MARK: - Properties
 
-    private var models = [CategoryCellModel]()
-    
+    private var models: [CategoryCellModel] = []
+
     // MARK: - Init
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - Helpers
-    
+
     private func setupView() {
         addSubview(tableView)
         tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
-    
+
     // MARK: - Updating
-    
+
     func update(with items: [CategoryCellModel]) {
         self.models = items
         tableView.reloadData()
@@ -56,11 +55,10 @@ class ExpensesList: UIView {
 // MARK: - UITableViewDataSource
 
 extension ExpensesList: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         models.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.dequeue(CategoryCell.self)
             .update(with: models[indexPath.row].viewModel)
@@ -70,7 +68,6 @@ extension ExpensesList: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension ExpensesList: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         models[indexPath.row].onTap()
     }
@@ -79,7 +76,7 @@ extension ExpensesList: UITableViewDelegate {
 struct CategoryCellModel {
     let viewModel: CategoryViewModel
     let onTap: VoidClosure
-    
+
     init(viewModel: CategoryViewModel, _ onTap: @escaping VoidClosure) {
         self.viewModel = viewModel
         self.onTap = onTap

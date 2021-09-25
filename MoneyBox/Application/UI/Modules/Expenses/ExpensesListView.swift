@@ -9,9 +9,8 @@ import UIKit
 import SnapKit
 
 class ExpensesListView: UIView {
-    
     // MARK: - Callbacks
-    
+
     var addExpenseTapped: VoidClosure?
 
     // MARK: - UI
@@ -21,9 +20,9 @@ class ExpensesListView: UIView {
         message: "У вас пока нет расходов",
         button: .init(title: "добавить") { [weak self] in self?.addExpenseTapped?() }
     )
-    
+
     private lazy var dailyList = DailyReviewListView()
-    
+
     // MARK: - Init
 
     init() {
@@ -34,13 +33,13 @@ class ExpensesListView: UIView {
         addSubview(dailyList)
         dailyList.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - Updating
-    
+
     func update(with sections: [HomeListSection] = []) {
         if sections.isEmpty {
             infoView.show()

@@ -8,7 +8,6 @@
 import UIKit
 
 protocol ExpensesListModule: Presentable {
-    
     var onAddExpenseTapped: VoidClosure? { get set }
     var onExpenseTapped: ((_ expenseId: Expenses.Id) -> Void)? { get set }
 }
@@ -18,7 +17,6 @@ enum Expenses {
 }
 
 class ExpensesListVC: UIViewController, ExpensesListModule {
-    
     // MARK: - Callbacks
 
     var onAddExpenseTapped: VoidClosure?
@@ -27,18 +25,18 @@ class ExpensesListVC: UIViewController, ExpensesListModule {
     // MARK: - Properties
 
     let homeView = ExpensesListView()
-    
+
     // MARK: - Life Cycle
-    
+
     override func loadView() {
         view = homeView
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
-    
+
     // MARK: - Setup
 
     private func setupView() {
@@ -48,21 +46,21 @@ class ExpensesListVC: UIViewController, ExpensesListModule {
         homeView.update(with: sections)
         title = "Расходы"
     }
-        
+
     private var sections: [HomeListSection] {
         [
             HomeListSection(title: "Март", .monthAmount("100₽")),
             HomeListSection(.dailyExpenses(dailyModel))
         ]
     }
-    
+
     var dailyModel: DailyReviewModel {
-        .init(date: "15 марта",
-              amount: "100₽",
-              expenses: [
+        .init(
+            date: "15 марта",
+            amount: "100₽",
+            expenses: [
                 .init(icon: Image.Category.airplane.image, title: "Заголовок", sumAmount: "100₽")
-              ],
-              onTap: { [weak self] in self?.onExpenseTapped?("") }
-        )
+            ]
+        ) { [weak self] in self?.onExpenseTapped?("") }
     }
 }

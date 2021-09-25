@@ -8,6 +8,5 @@
 import UIKit
 
 extension CGFloat {
-    
     static let automaticDimension = UITableView.automaticDimension
 }

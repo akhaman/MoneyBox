@@ -22,6 +22,7 @@
 		CE89C7C826EBA4790014ED57 /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89C7C726EBA4790014ED57 /* BarButtonItem.swift */; };
 		CE89C7CA26EBA8820014ED57 /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89C7C926EBA8820014ED57 /* UINavigationController+.swift */; };
 		CE9825EC26EA2BAE00870C43 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9825EB26EA2BAE00870C43 /* CardView.swift */; };
+		CEA80C9426FF562900541AFB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CEA80C9326FF562900541AFB /* .swiftlint.yml */; };
 		CEC652D226E8E95E007099B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC652D126E8E95E007099B9 /* AppDelegate.swift */; };
 		CEC652DE26E8E95F007099B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC652DC26E8E95F007099B9 /* LaunchScreen.storyboard */; };
 		CEC652E626E8EB34007099B9 /* ExpensesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC652E526E8EB34007099B9 /* ExpensesListVC.swift */; };
@@ -85,6 +86,7 @@
 		CE89C7C726EBA4790014ED57 /* BarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItem.swift; sourceTree = "<group>"; };
 		CE89C7C926EBA8820014ED57 /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
 		CE9825EB26EA2BAE00870C43 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		CEA80C9326FF562900541AFB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		CEC652CE26E8E95E007099B9 /* MoneyBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC652D126E8E95E007099B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC652DD26E8E95F007099B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		CEC652C526E8E95E007099B9 = {
 			isa = PBXGroup;
 			children = (
+				CEA80C9326FF562900541AFB /* .swiftlint.yml */,
 				CEEFAABD26E9205F005169C7 /* swiftgen.yml */,
 				CEC652D026E8E95E007099B9 /* MoneyBox */,
 				CEC652CF26E8E95E007099B9 /* Products */,
@@ -470,6 +473,7 @@
 			buildPhases = (
 				9493A056D2CEA5FFDDB89C99 /* [CP] Check Pods Manifest.lock */,
 				CEEFAABC26E91E88005169C7 /* SwiftGen */,
+				CEA80C9226FF548500541AFB /* SwiftLint */,
 				CEC652CA26E8E95E007099B9 /* Sources */,
 				CEC652CB26E8E95E007099B9 /* Frameworks */,
 				CEC652CC26E8E95E007099B9 /* Resources */,
@@ -528,6 +532,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA80C9426FF562900541AFB /* .swiftlint.yml in Resources */,
 				CEC652DE26E8E95F007099B9 /* LaunchScreen.storyboard in Resources */,
 				CE6A779E26E932BF00F8B1D3 /* Colors.xcassets in Resources */,
 				CEEFAAC726E92F61005169C7 /* Images.xcassets in Resources */,
@@ -559,6 +564,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CEA80C9226FF548500541AFB /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		CEEFAABC26E91E88005169C7 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;

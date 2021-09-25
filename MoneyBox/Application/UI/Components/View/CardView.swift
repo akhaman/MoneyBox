@@ -8,16 +8,15 @@
 import UIKit
 
 class CardView: UIView {
-    
     private let cornerRadius: CGFloat
     private var animationsEnabled = true
-    
+
     // MARK: - LifeCycle
-    
+
     init(frame: CGRect = .zero, cornerRadius: CGFloat = 12) {
         self.cornerRadius = cornerRadius
         super.init(frame: frame)
-        
+
         backgroundColor = .white
         layer.cornerRadius = cornerRadius
         layer.shadowOpacity = 1
@@ -27,18 +26,18 @@ class CardView: UIView {
         layer.shouldRasterize = true
         layer.rasterizationScale = UIScreen.main.scale
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - Updating
-    
+
     func set(highlighted: Bool) {
         guard animationsEnabled else { return }
-        
+
         let transform = highlighted ? CGAffineTransform(scaleX: 0.95, y: 0.95) : .identity
-        
+
         UIView.animate(
             withDuration: 0.3,
             delay: 0,
@@ -47,25 +46,25 @@ class CardView: UIView {
             self.transform = transform
         }
     }
-    
+
     @discardableResult
     func enableAnimations() -> Self {
         animationsEnabled = true
         return self
     }
-    
+
     @discardableResult
     func disableAnimations() -> Self {
         animationsEnabled = false
         return self
     }
-    
+
     @discardableResult
     func enableShadows() -> Self {
         layer.shadowOpacity = 1
         return self
     }
-    
+
     @discardableResult
     func disableShadows() -> Self {
         layer.shadowOpacity = 0

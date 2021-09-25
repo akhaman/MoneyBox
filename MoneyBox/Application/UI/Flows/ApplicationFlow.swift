@@ -11,18 +11,17 @@ protocol ApplicationFlow: Coordinatable {
 }
 
 class ApplicationFlowImpl: NavigationCoordinator, ApplicationFlow {
-    
     private let container: DIContainer
-    
+
     init(router: Routable, container: DIContainer) {
         self.container = container
         super.init(router: router)
     }
-    
+
     override func start() {
         runMainFlow()
     }
-    
+
     // MARK: - Flows
 
     private func runMainFlow() {

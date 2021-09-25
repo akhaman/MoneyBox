@@ -10,9 +10,8 @@ import DITranquillity
 protocol BudgetFlow: Coordinatable {}
 
 final class BudgetFlowImpl: NavigationCoordinator, BudgetFlow {
-    
     private let container: DIContainer
-    
+
     init(router: Routable, container: DIContainer) {
         self.container = container
         super.init(router: router)

@@ -8,13 +8,12 @@
 import UIKit
 
 extension UINavigationController {
-    
     convenience init(
         root: UIViewController,
         style: NavBarStyle
     ) {
         self.init(rootViewController: root)
-        
+
         switch style {
         case .clear:
             navigationBar.setBackgroundImage(UIImage(), for: .default)

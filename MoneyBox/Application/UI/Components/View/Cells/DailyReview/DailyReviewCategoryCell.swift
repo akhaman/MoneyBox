@@ -8,14 +8,13 @@
 import UIKit
 
 class DailyReviewCategoryCell: UITableViewCell {
-
     private lazy var categoryView: CategoryView = {
         let view = CategoryView()
         contentView.addSubview(view)
         view.snp.makeConstraints { $0.edges.equalToSuperview() }
         return view
     }()
-    
+
     // MARK: - Init
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -23,13 +22,13 @@ class DailyReviewCategoryCell: UITableViewCell {
         backgroundColor = .clear
         selectionStyle = .none
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - Configuration
-    
+
     @discardableResult
     func update(with model: CategoryViewModel) -> Self {
         categoryView.update(with: model)

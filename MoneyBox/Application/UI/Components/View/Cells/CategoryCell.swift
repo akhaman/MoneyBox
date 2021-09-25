@@ -8,9 +8,8 @@
 import UIKit
 
 class CategoryCell: CardTableCell {
-        
     // MARK: - UI
-    
+
     private lazy var categoryView: CategoryView = {
         let view = CategoryView()
         cardView.addSubview(view)
@@ -24,17 +23,16 @@ class CategoryCell: CardTableCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .clear
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: - Configuration
-    
+
     @discardableResult
     func update(with model: CategoryViewModel) -> Self {
         categoryView.update(with: model)
         return self
     }
 }
-

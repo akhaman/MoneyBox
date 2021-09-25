@@ -16,11 +16,10 @@ struct DailyReviewModel {
 }
 
 class DailyReviewCell: CardTableCell {
-
     // MARK: - UI
 
     private lazy var headerView = DailyHeaderView(frame: CGRect(height: Layout.dailyHeaderHeight))
-    
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
@@ -35,13 +34,13 @@ class DailyReviewCell: CardTableCell {
         tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
         return tableView
     }()
-        
+
     // MARK: - Properties
-    
-    private var expensesModels = [CategoryViewModel]()
-    
+
+    private var expensesModels: [CategoryViewModel] = []
+
     // MARK: - Updating
-    
+
     @discardableResult
     func update(with model: DailyReviewModel) -> Self {
         headerView.update(date: model.date, amount: model.amount)
@@ -54,11 +53,10 @@ class DailyReviewCell: CardTableCell {
 // MARK: - UITableViewDataSource
 
 extension DailyReviewCell: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         expensesModels.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.dequeue(DailyReviewCategoryCell.self).update(with: expensesModels[indexPath.row])
     }

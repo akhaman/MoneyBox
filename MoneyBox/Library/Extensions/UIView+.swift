@@ -8,19 +8,18 @@
 import UIKit
 
 extension UIView {
-    
     @discardableResult
     func hide() -> Self {
         isHidden = true
         return self
     }
-    
+
     @discardableResult
     func show() -> Self {
         isHidden = false
         return self
     }
-    
+
     @discardableResult
     func apply(to superview: UIView) -> Self {
         superview.addSubview(self)
