@@ -7,67 +7,37 @@
 
 import UIKit
 
-protocol TabBarModule {
-    typealias NavigationClosuse = (_ rootController: UINavigationController) -> Void
-    
-    func set(onExpensesFlowRun: @escaping NavigationClosuse, onBudgetFlowRun: @escaping NavigationClosuse)
+protocol TabBarModule: Presentable {
+    func configure(with items: [TabBarItem], selectedIndex: Int)
+}
+
+struct TabBarItem {
+    let title: String
+    let icon: UIImage
+    let presentable: Presentable?
+    let onSelect: VoidClosure
 }
 
 final class TabBarController: UITabBarController, TabBarModule {
-   
-    private var onExpensesFlowRun: NavigationClosuse?
-    private var onBudgetFlowRun: NavigationClosuse?
     
-    func set(onExpensesFlowRun: @escaping NavigationClosuse, onBudgetFlowRun: @escaping NavigationClosuse) {
-        self.onExpensesFlowRun = onExpensesFlowRun
-        self.onBudgetFlowRun = onBudgetFlowRun
-        setup()
+    private var tagClosureMap = [Int: VoidClosure]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
-    private func setup() {
-        delegate = self
-        let expenses = rootController(from: .expenses)
-        let budget = rootController(from: .budget)
-        onExpensesFlowRun?(expenses)
-        setViewControllers([expenses, budget], animated: false)
-    }
-    
-    private func rootController(from item: Item) -> UINavigationController {
-        let controller = UINavigationController()
-        
-        switch item {
-        case .expenses:
-            controller.tabBarItem.title = "Расходы"
-            controller.tabBarItem.image = Image.Icon.wallet.image
-        case .budget:
-            controller.tabBarItem.title = "Бюджет"
-            controller.tabBarItem.image = Image.Icon.moneybag.image
+    func configure(with items: [TabBarItem], selectedIndex: Int) {
+        let mappedItems = items.compactMap { item -> (vc: UIViewController, tag: Int, action: VoidClosure)? in
+            guard let viewController = item.presentable?.toPresent else { return nil }
+            viewController.tabBarItem = UITabBarItem(title: item.title, image: item.icon, tag: viewController.hashValue)
+            return (viewController, viewController.hashValue, item.onSelect)
         }
         
-        return controller
+        mappedItems.forEach { tagClosureMap[$0.tag] = $0.action }
+        setViewControllers(mappedItems.map { $0.vc }, animated: false)
     }
     
-    enum Item: Int {
-        case expenses
-        case budget
-    }
-}
-
-// MARK: - UITabBarControllerDelegate
-
-extension TabBarController: UITabBarControllerDelegate {
-    
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        guard let rootController = viewControllers?[selectedIndex] as? UINavigationController,
-              rootController.viewControllers.isEmpty else { return }
-        
-        switch Item(rawValue: selectedIndex) {
-        case .expenses:
-            onExpensesFlowRun?(rootController)
-        case .budget:
-            onBudgetFlowRun?(rootController)
-        case .none:
-            break
-        }
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        tagClosureMap[item.tag]?()
     }
 }

@@ -2,32 +2,29 @@
 //  Coordinator.swift
 //  MoneyBox
 //
-//  Created by Ruslan Akhmadeev on 11.09.2021.
+//  Created by Ruslan Akhmadeev on 19.09.2021.
 //
 
-import Foundation
+import UIKit
 
-protocol Coordinator: AnyObject {
+class Coordinator: Coordinatable {
     
-    func start()
-}
-
-class BaseCoordinator: Coordinator {
+    private var childCoordinators = [Coordinatable]()
     
-    private var childCoordinators = [Coordinator]()
+    var toPresent: UIViewController? { nil }
     
     func start() {}
     
-    func addDependency(_ coordinator: Coordinator) {
+    func addDependency(_ coordinator: Coordinatable) {
         guard !childCoordinators.contains(where: { $0 === coordinator }) else { return }
         childCoordinators.append(coordinator)
     }
     
-    func removeDependency(_ coordinator: Coordinator?) {
+    func removeDependency(_ coordinator: Coordinatable?) {
         guard childCoordinators.isEmpty == false,
               let coordinator = coordinator else { return }
         
-        if let coordinator = coordinator as? BaseCoordinator,
+        if let coordinator = coordinator as? Coordinator,
            !coordinator.childCoordinators.isEmpty {
            
             coordinator.childCoordinators

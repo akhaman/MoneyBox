@@ -8,20 +8,18 @@
 import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    let applicationFactory: ApplicationFactory = ApplicationFactoryImpl()
-    
-    var coordinator: Coordinator?
+        
     var window: UIWindow?
     
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        let (window, coordinator) = applicationFactory.makeWindowWithCoordinator()
+        let window = UIWindow()
         self.window = window
-        self.coordinator = coordinator
-        coordinator.start()
+        Application.initialize()
+        Application.configure(window: window)
+        Application.start(withLaunchoptions: launchOptions)
         return true
     }
 }

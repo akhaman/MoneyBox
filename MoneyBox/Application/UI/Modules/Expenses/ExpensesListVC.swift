@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ExpensesListModule {
+protocol ExpensesListModule: Presentable {
     
     var onAddExpenseTapped: VoidClosure? { get set }
     var onExpenseTapped: ((_ expenseId: Expenses.Id) -> Void)? { get set }
@@ -26,19 +26,9 @@ class ExpensesListVC: UIViewController, ExpensesListModule {
 
     // MARK: - Properties
 
-    let homeView: ExpensesListView
+    let homeView = ExpensesListView()
     
     // MARK: - Life Cycle
-
-    init(view: ExpensesListView) {
-        self.homeView = view
-        super.init(nibName: nil, bundle: nil)
-        
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func loadView() {
         view = homeView

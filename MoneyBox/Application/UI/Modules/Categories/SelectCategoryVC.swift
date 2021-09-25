@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol SelectCategoryModule: AnyObject {
+protocol SelectCategoryModule: Presentable {
     
     var onSelectCategory: ((Categories.Id) -> Void)? { get set }
 }
