@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		77373F9E39E6E75BB55A1789 /* Pods_MoneyBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796E2846640FB007D83AC145 /* Pods_MoneyBox.framework */; };
-		CE39A90526FF720900A4AD61 /* ExpenseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39A90426FF720900A4AD61 /* ExpenseCategory.swift */; };
+		CE39A90526FF720900A4AD61 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39A90426FF720900A4AD61 /* Expense.swift */; };
 		CE39A90A26FFB58A00A4AD61 /* ExpenseDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39A90926FFB58A00A4AD61 /* ExpenseDetailsVC.swift */; };
 		CE39A90D26FFB59C00A4AD61 /* ExpenseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39A90C26FFB59C00A4AD61 /* ExpenseDetailsView.swift */; };
 		CE39A90F26FFBB9500A4AD61 /* CardFormTransitioningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39A90E26FFBB9500A4AD61 /* CardFormTransitioningManager.swift */; };
@@ -22,6 +22,9 @@
 		CE9F0821272EEC8600A45676 /* ExpenseDetailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F0820272EEC8600A45676 /* ExpenseDetailsManager.swift */; };
 		CE9F0824272EFCF700A45676 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CE9F0823272EFCF700A45676 /* Realm */; };
 		CE9F0826272EFCF700A45676 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE9F0825272EFCF700A45676 /* RealmSwift */; };
+		CE9F0829272EFE8D00A45676 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F0828272EFE8D00A45676 /* RealmManager.swift */; };
+		CE9F082C272F002F00A45676 /* ExpensesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F082B272F002F00A45676 /* ExpensesRepository.swift */; };
+		CE9F082E272F014100A45676 /* PersistedExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F082D272F014100A45676 /* PersistedExpense.swift */; };
 		CEA80C9426FF562900541AFB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CEA80C9326FF562900541AFB /* .swiftlint.yml */; };
 		CEC652D226E8E95E007099B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC652D126E8E95E007099B9 /* AppDelegate.swift */; };
 		CEC652DE26E8E95F007099B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC652DC26E8E95F007099B9 /* LaunchScreen.storyboard */; };
@@ -65,7 +68,7 @@
 		16F448DAD015A4D640A772F0 /* Pods-MoneyBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyBox.debug.xcconfig"; path = "Target Support Files/Pods-MoneyBox/Pods-MoneyBox.debug.xcconfig"; sourceTree = "<group>"; };
 		796E2846640FB007D83AC145 /* Pods_MoneyBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		859C0B15C04A7F4EFFF1516B /* Pods-MoneyBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyBox.release.xcconfig"; path = "Target Support Files/Pods-MoneyBox/Pods-MoneyBox.release.xcconfig"; sourceTree = "<group>"; };
-		CE39A90426FF720900A4AD61 /* ExpenseCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategory.swift; sourceTree = "<group>"; };
+		CE39A90426FF720900A4AD61 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		CE39A90926FFB58A00A4AD61 /* ExpenseDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailsVC.swift; sourceTree = "<group>"; };
 		CE39A90C26FFB59C00A4AD61 /* ExpenseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailsView.swift; sourceTree = "<group>"; };
 		CE39A90E26FFBB9500A4AD61 /* CardFormTransitioningManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFormTransitioningManager.swift; sourceTree = "<group>"; };
@@ -76,6 +79,9 @@
 		CE9F081C272EDA3600A45676 /* AttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedString+.swift"; sourceTree = "<group>"; };
 		CE9F081E272EE17000A45676 /* TextFieldWithInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithInsets.swift; sourceTree = "<group>"; };
 		CE9F0820272EEC8600A45676 /* ExpenseDetailsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailsManager.swift; sourceTree = "<group>"; };
+		CE9F0828272EFE8D00A45676 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		CE9F082B272F002F00A45676 /* ExpensesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesRepository.swift; sourceTree = "<group>"; };
+		CE9F082D272F014100A45676 /* PersistedExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedExpense.swift; sourceTree = "<group>"; };
 		CEA80C9326FF562900541AFB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		CEC652CE26E8E95E007099B9 /* MoneyBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC652D126E8E95E007099B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,7 +158,7 @@
 		CE39A90626FF740000A4AD61 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				CE39A90426FF720900A4AD61 /* ExpenseCategory.swift */,
+				CE39A90426FF720900A4AD61 /* Expense.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -160,6 +166,7 @@
 		CE39A90726FF740800A4AD61 /* Persisted */ = {
 			isa = PBXGroup;
 			children = (
+				CE9F082D272F014100A45676 /* PersistedExpense.swift */,
 			);
 			path = Persisted;
 			sourceTree = "<group>";
@@ -188,6 +195,22 @@
 				CE39A90E26FFBB9500A4AD61 /* CardFormTransitioningManager.swift */,
 			);
 			path = Transitions;
+			sourceTree = "<group>";
+		};
+		CE9F0827272EFE8200A45676 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE9F0828272EFE8D00A45676 /* RealmManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE9F082A272F001F00A45676 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CE9F082B272F002F00A45676 /* ExpensesRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		CEC652C526E8E95E007099B9 = {
@@ -269,6 +292,8 @@
 		CEC6621126ECB62600F9C187 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				CE9F082A272F001F00A45676 /* Repositories */,
+				CE9F0827272EFE8200A45676 /* Services */,
 				CEC6621226ECB62C00F9C187 /* UI */,
 				CEC6622726ECBCEC00F9C187 /* Models */,
 			);
@@ -588,6 +613,7 @@
 				CEEC38F826EB44A4006E1234 /* PlansTableCell.swift in Sources */,
 				CE39A90D26FFB59C00A4AD61 /* ExpenseDetailsView.swift in Sources */,
 				CE9F081B272ED3A800A45676 /* NavigationBar.swift in Sources */,
+				CE9F0829272EFE8D00A45676 /* RealmManager.swift in Sources */,
 				CEEC38EC26EB359C006E1234 /* DailyReviewCategoryCell.swift in Sources */,
 				CEC6620126EBC42100F9C187 /* Section.swift in Sources */,
 				CEEC38F626EB4100006E1234 /* UICollectionView+.swift in Sources */,
@@ -598,6 +624,7 @@
 				CEC652F726E8EC29007099B9 /* CategoryView.swift in Sources */,
 				CEC652FD26E8EC3C007099B9 /* Optional+.swift in Sources */,
 				CEC6620726EBED7100F9C187 /* SelectCategoryVC.swift in Sources */,
+				CE9F082C272F002F00A45676 /* ExpensesRepository.swift in Sources */,
 				CED1644026E949ED0019E451 /* Button.swift in Sources */,
 				CEC652FF26E8EC44007099B9 /* Typealiases.swift in Sources */,
 				CE9F081F272EE17000A45676 /* TextFieldWithInsets.swift in Sources */,
@@ -607,10 +634,11 @@
 				CEC652ED26E8EC13007099B9 /* MessageButton.swift in Sources */,
 				CE9825EC26EA2BAE00870C43 /* CardView.swift in Sources */,
 				CEC652F126E8EC20007099B9 /* ExpensesListView.swift in Sources */,
+				CE9F082E272F014100A45676 /* PersistedExpense.swift in Sources */,
 				CE9F081D272EDA3600A45676 /* AttributedString+.swift in Sources */,
 				CED1643A26E937C80019E451 /* GeneratedImages.swift in Sources */,
 				CE39A90A26FFB58A00A4AD61 /* ExpenseDetailsVC.swift in Sources */,
-				CE39A90526FF720900A4AD61 /* ExpenseCategory.swift in Sources */,
+				CE39A90526FF720900A4AD61 /* Expense.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

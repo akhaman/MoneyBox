@@ -48,7 +48,7 @@ final class ExpenseDetailsVC: UIViewController {
 
         detailsView.onDoneButtonTapped = { [weak self] output in
             guard let self = self else { return }
-            let expense = Expense(category: self.category, date: Date(), sum: output.sum, comment: output.comment)
+            let expense = Expense.new(category: self.category, sum: output.sum, comment: output.comment)
             self.manager.save(expense: expense)
             self.dismiss(animated: true)
         }

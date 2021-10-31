@@ -8,13 +8,18 @@
 import Foundation
 
 protocol ExpenseDetailsManagerProtocol {
-
     func save(expense: Expense)
 }
 
 class ExpenseDetailsManager: ExpenseDetailsManagerProtocol {
 
+    private let repository: ExpensesRepositoryProtocol
+
+    init(repository: ExpensesRepositoryProtocol = ExpensesRepository()) {
+        self.repository = repository
+    }
+
     func save(expense: Expense) {
-        
+        repository.save(expense: expense)
     }
 }
