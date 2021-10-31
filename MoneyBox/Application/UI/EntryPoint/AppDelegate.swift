@@ -8,6 +8,7 @@
 import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+
     var window: UIWindow?
 
     func application(
@@ -16,9 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         let window = UIWindow()
         self.window = window
-        Application.initialize()
-        Application.configure(window: window)
-        Application.start(withLaunchoptions: launchOptions)
+        let navigationController = UINavigationController(navigationBarClass: NavigationBar.self, toolbarClass: nil)
+        let expensesListVC = ExpensesListVC()
+        navigationController.pushViewController(expensesListVC, animated: false)
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
         return true
     }
 }

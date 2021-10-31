@@ -7,23 +7,14 @@
 
 import UIKit
 
-protocol SelectCategoryModule: Presentable {
-    var onSelectCategory: ((Categories.Id) -> Void)? { get set }
-}
+class SelectCategoryVC: UIViewController {
 
-enum Categories {
-    typealias Id = String
-}
-
-class SelectCategoryVC: UIViewController, SelectCategoryModule {
-    var onSelectCategory: ((Categories.Id) -> Void)?
-
-    private let cateogriesView = SelectCategoryView()
+    private let categoriesView = SelectCategoryView()
 
     // MARK: - Life Cycle
 
     override func loadView() {
-        view = cateogriesView
+        view = categoriesView
     }
 
     override func viewDidLoad() {
@@ -33,10 +24,39 @@ class SelectCategoryVC: UIViewController, SelectCategoryModule {
 
     private func setupView() {
         title = "Категории"
-        cateogriesView.update(with: models)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: Image.Icon.close.image,
+            style: .plain,
+            target: self,
+            action: #selector(close)
+        )
+
+        categoriesView.update(with: categoryViewModels(from: [.home]))
     }
 
-    private var models: [CategoryCollectionCellModel] {
-        Array(repeating: .init(icon: Image.Category.agreement.image, title: "Заголовок") {}, count: 5)
+    private func categoryViewModels(from categories: [Expense.Category]) -> [CategoryCollectionCellModel] {
+        categories.map { category in
+            CategoryCollectionCellModel(from: category) { [weak self] in
+                self?.openExpenseDetails(withCategory: category)
+            }
+        }
+    }
+
+    // MARK: - Navigation
+
+    private func openExpenseDetails(withCategory category: Expense.Category) {
+        let expenseDetailsVC = ExpenseDetailsVC(category: category)
+        navigationController?.pushViewController(expenseDetailsVC, animated: true)
+    }
+
+    @objc private func close() {
+        dismiss(animated: true)
+    }
+}
+
+extension CategoryCollectionCellModel {
+    init(from category: Expense.Category, onSelect: @escaping VoidClosure) {
+        self.init(icon: category.icon, title: category.name, onTap: onSelect)
     }
 }

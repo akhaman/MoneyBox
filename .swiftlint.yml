@@ -10,6 +10,8 @@ disabled_rules:
   - todo
   - unused_capture_list
   - force_cast
+  - vertical_whitespace_opening_braces
+  - trailing_whitespace
 
 opt_in_rules:
   - array_init
@@ -96,10 +98,6 @@ multiline_arguments:
 
 private_over_fileprivate:
   validate_extensions: true
-
-trailing_whitespace:
-  ignores_empty_lines: false
-  ignores_comments: true
 
 vertical_whitespace:
   max_empty_lines: 1

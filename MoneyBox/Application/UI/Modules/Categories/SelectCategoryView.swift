@@ -19,7 +19,7 @@ class SelectCategoryView: UIView {
     private lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = Layout.categoryCollectionItemSize
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        layout.sectionInset = UIEdgeInsets(top: 64, left: 42, bottom: 64, right: 42)
         layout.minimumInteritemSpacing = 0
 
         return layout
