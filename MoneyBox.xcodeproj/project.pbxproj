@@ -20,6 +20,8 @@
 		CE9F081D272EDA3600A45676 /* AttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F081C272EDA3600A45676 /* AttributedString+.swift */; };
 		CE9F081F272EE17000A45676 /* TextFieldWithInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F081E272EE17000A45676 /* TextFieldWithInsets.swift */; };
 		CE9F0821272EEC8600A45676 /* ExpenseDetailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F0820272EEC8600A45676 /* ExpenseDetailsManager.swift */; };
+		CE9F0824272EFCF700A45676 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CE9F0823272EFCF700A45676 /* Realm */; };
+		CE9F0826272EFCF700A45676 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE9F0825272EFCF700A45676 /* RealmSwift */; };
 		CEA80C9426FF562900541AFB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CEA80C9326FF562900541AFB /* .swiftlint.yml */; };
 		CEC652D226E8E95E007099B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC652D126E8E95E007099B9 /* AppDelegate.swift */; };
 		CEC652DE26E8E95F007099B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC652DC26E8E95F007099B9 /* LaunchScreen.storyboard */; };
@@ -121,6 +123,8 @@
 			files = (
 				CE63130726F4FE94009A9EB2 /* DITranquillity in Frameworks */,
 				CEDA05EA26F512B600829B02 /* SnapKit in Frameworks */,
+				CE9F0824272EFCF700A45676 /* Realm in Frameworks */,
+				CE9F0826272EFCF700A45676 /* RealmSwift in Frameworks */,
 				77373F9E39E6E75BB55A1789 /* Pods_MoneyBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +444,8 @@
 			packageProductDependencies = (
 				CE63130626F4FE94009A9EB2 /* DITranquillity */,
 				CEDA05E926F512B600829B02 /* SnapKit */,
+				CE9F0823272EFCF700A45676 /* Realm */,
+				CE9F0825272EFCF700A45676 /* RealmSwift */,
 			);
 			productName = MoneyBox;
 			productReference = CEC652CE26E8E95E007099B9 /* MoneyBox.app */;
@@ -471,6 +477,7 @@
 			packageReferences = (
 				CE63130526F4FE93009A9EB2 /* XCRemoteSwiftPackageReference "DITranquillity" */,
 				CEDA05E826F512B600829B02 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CE9F0822272EFCF700A45676 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = CEC652CF26E8E95E007099B9 /* Products */;
 			projectDirPath = "";
@@ -811,6 +818,14 @@
 				minimumVersion = 4.3.3;
 			};
 		};
+		CE9F0822272EFCF700A45676 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.18.0;
+			};
+		};
 		CEDA05E826F512B600829B02 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -826,6 +841,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE63130526F4FE93009A9EB2 /* XCRemoteSwiftPackageReference "DITranquillity" */;
 			productName = DITranquillity;
+		};
+		CE9F0823272EFCF700A45676 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE9F0822272EFCF700A45676 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		CE9F0825272EFCF700A45676 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE9F0822272EFCF700A45676 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
 		};
 		CEDA05E926F512B600829B02 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

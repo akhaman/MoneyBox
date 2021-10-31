@@ -46,7 +46,7 @@ class SelectCategoryVC: UIViewController {
     // MARK: - Navigation
 
     private func openExpenseDetails(withCategory category: Expense.Category) {
-        let expenseDetailsVC = ExpenseDetailsVC(category: category)
+        let expenseDetailsVC = ExpenseDetailsVC(category: category, manager: ExpenseDetailsManager())
         navigationController?.pushViewController(expenseDetailsVC, animated: true)
     }
 

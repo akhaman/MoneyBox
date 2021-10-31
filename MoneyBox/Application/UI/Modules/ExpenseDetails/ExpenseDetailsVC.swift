@@ -12,6 +12,7 @@ final class ExpenseDetailsVC: UIViewController {
     var onExpenseCreated: VoidClosure?
     private let category: Expense.Category
     private let manager: ExpenseDetailsManagerProtocol
+    
     private lazy var detailsView = ExpenseDetailsView()
 
     init(category: Expense.Category, manager: ExpenseDetailsManagerProtocol) {
