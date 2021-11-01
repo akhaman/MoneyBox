@@ -47,7 +47,7 @@ class CategoryView: UIView {
     func update(with model: ExpensesListViewState.Category) -> Self {
         iconImageView.image = model.icon
         titleLabel.text = model.title
-        sumLabel.text = model.sumAmount
+        sumLabel.text = model.sumAmount + "₽"
         return self
     }
 
