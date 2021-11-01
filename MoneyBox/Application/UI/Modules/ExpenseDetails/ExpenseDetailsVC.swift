@@ -8,8 +8,7 @@
 import UIKit
 
 final class ExpenseDetailsVC: UIViewController {
-    
-    var onExpenseCreated: VoidClosure?
+
     private let category: Expense.Category
     private let manager: ExpenseDetailsManagerProtocol
     
@@ -39,6 +38,8 @@ final class ExpenseDetailsVC: UIViewController {
     // MARK: - Setting Up View
 
     private func setupView() {
+        configureTitleView()
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: Image.Icon.close.image,
             style: .plain,
@@ -52,6 +53,21 @@ final class ExpenseDetailsVC: UIViewController {
             self.manager.save(expense: expense)
             self.dismiss(animated: true)
         }
+    }
+
+    private func configureTitleView() {
+        let label = UILabel()
+        label.text = category.name
+        label.font = .systemFont(ofSize: 17, weight: .medium)
+        label.textColor = Colors.primaryText.color
+
+        let imageView = UIImageView(image: category.icon)
+
+        let stack = UIStackView(arrangedSubviews: [imageView, label])
+        stack.axis = .horizontal
+        stack.spacing = 8
+
+        navigationItem.titleView = stack
     }
 
     @objc private func closeButtonDidTap() {
