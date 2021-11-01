@@ -12,7 +12,6 @@ class ExpensesList: UIView {
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 46
         tableView.separatorStyle = .none
@@ -24,7 +23,7 @@ class ExpensesList: UIView {
 
     // MARK: - Properties
 
-    private var models: [CategoryCellModel] = []
+    private var models: [ExpensesListViewState.Category] = []
 
     // MARK: - Init
 
@@ -46,7 +45,7 @@ class ExpensesList: UIView {
 
     // MARK: - Updating
 
-    func update(with items: [CategoryCellModel]) {
+    func update(with items: [ExpensesListViewState.Category]) {
         self.models = items
         tableView.reloadData()
     }
@@ -61,24 +60,6 @@ extension ExpensesList: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.dequeue(CategoryCell.self)
-            .update(with: models[indexPath.row].viewModel)
-    }
-}
-
-// MARK: - UITableViewDelegate
-
-extension ExpensesList: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        models[indexPath.row].onTap()
-    }
-}
-
-struct CategoryCellModel {
-    let viewModel: CategoryViewModel
-    let onTap: VoidClosure
-
-    init(viewModel: CategoryViewModel, _ onTap: @escaping VoidClosure) {
-        self.viewModel = viewModel
-        self.onTap = onTap
+            .update(with: models[indexPath.row])
     }
 }

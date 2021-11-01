@@ -32,7 +32,7 @@ class SelectCategoryVC: UIViewController {
             action: #selector(close)
         )
 
-        categoriesView.update(with: categoryViewModels(from: [.home]))
+        categoriesView.update(with: categoryViewModels(from: Expense.Category.allCases))
     }
 
     private func categoryViewModels(from categories: [Expense.Category]) -> [CategoryCollectionCellModel] {

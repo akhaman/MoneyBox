@@ -9,11 +9,12 @@ import UIKit
 import SnapKit
 
 class ExpensesListView: UIView {
+    
     // MARK: - Callbacks
 
     var addExpenseTapped: VoidClosure?
 
-    // MARK: - UI
+    // MARK: - Subviews
 
     private lazy var infoView = InfoView(
         image: Image.Info.donation.image,
@@ -21,33 +22,49 @@ class ExpensesListView: UIView {
         button: .init(title: "добавить") { [weak self] in self?.addExpenseTapped?() }
     )
 
-    private lazy var dailyList = DailyReviewListView()
+    private lazy var list = DailyReviewListView()
+    // MARK: - State
+
+    private var sections: [ExpensesListViewState.Section] = []
 
     // MARK: - Init
 
     init() {
         super.init(frame: .zero)
-        GradientView.mainBackground.apply(to: self)
-        addSubview(infoView)
-        infoView.snp.makeConstraints { $0.edges.equalToSuperview() }
-        addSubview(dailyList)
-        dailyList.snp.makeConstraints { $0.edges.equalToSuperview() }
+        setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Initial Configuration
+
+    private func setupView() {
+        let background = GradientView.mainBackground
+        addSubview(background)
+        background.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+
+        addSubview(list)
+        list.snp.makeConstraints { $0.edges.equalToSuperview() }
+
+        addSubview(infoView)
+        infoView.snp.makeConstraints { $0.edges.equalToSuperview() }
+    }
+
     // MARK: - Updating
 
-    func update(with sections: [HomeListSection] = []) {
-        if sections.isEmpty {
+    func update(state: ExpensesListViewState) {
+
+        if state.isEmpty {
             infoView.show()
-            dailyList.hide()
+            list.hide()
         } else {
             infoView.hide()
-            dailyList.show()
-            dailyList.update(with: sections)
+            list.show()
+            list.update(with: state.sections)
         }
     }
 }

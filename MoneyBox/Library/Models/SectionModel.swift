@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Section<Item> {
+struct SectionModel<Item> {
     let title: String?
     var items: [Item]
 

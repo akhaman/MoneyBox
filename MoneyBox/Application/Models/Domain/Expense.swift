@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Expense {
+struct Expense: Dated {
     let id: String
     let category: Category
     let date: Date
@@ -25,7 +25,7 @@ extension Expense {
 
 extension Expense {
 
-    enum Category: String {
+    enum Category: Int, CaseIterable {
         case home
         case food
         case transport
@@ -40,6 +40,13 @@ extension Expense {
         case children
         case travel
         case other
+    }
+}
+
+extension Expense.Category: Comparable {
+
+    static func < (lhs: Expense.Category, rhs: Expense.Category) -> Bool {
+        lhs.rawValue < rhs.rawValue
     }
 }
 

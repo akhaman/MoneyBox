@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow()
         self.window = window
         let navigationController = UINavigationController(navigationBarClass: NavigationBar.self, toolbarClass: nil)
-        let expensesListVC = ExpensesListVC()
+        let expensesListVC = ExpensesListVC(manager: ExpensesListManager())
         navigationController.pushViewController(expensesListVC, animated: false)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()

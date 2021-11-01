@@ -44,7 +44,7 @@ class CategoryView: UIView {
     // MARK: - Updating
 
     @discardableResult
-    func update(with model: CategoryViewModel) -> Self {
+    func update(with model: ExpensesListViewState.Category) -> Self {
         iconImageView.image = model.icon
         titleLabel.text = model.title
         sumLabel.text = model.sumAmount
@@ -66,10 +66,4 @@ class CategoryView: UIView {
 
         iconImageView.snp.makeConstraints { $0.size.equalTo(22) }
     }
-}
-
-struct CategoryViewModel {
-    let icon: UIImage
-    let title: String
-    let sumAmount: String
 }

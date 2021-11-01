@@ -8,14 +8,8 @@
 import UIKit
 import SnapKit
 
-struct DailyReviewModel {
-    let date: String
-    let amount: String
-    let expenses: [CategoryViewModel]
-    let onTap: VoidClosure
-}
-
 class DailyReviewCell: CardTableCell {
+    
     // MARK: - UI
 
     private lazy var headerView = DailyHeaderView(frame: CGRect(height: Layout.dailyHeaderHeight))
@@ -30,21 +24,31 @@ class DailyReviewCell: CardTableCell {
         tableView.isScrollEnabled = false
         tableView.backgroundColor = .clear
         tableView.allowsSelection = false
-        cardView.addSubview(tableView)
-        tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
         return tableView
     }()
 
     // MARK: - Properties
 
-    private var expensesModels: [CategoryViewModel] = []
+    private var expensesModels: [ExpensesListViewState.Category] = []
 
+    // MARK: - Initialization
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        cardView.addSubview(tableView)
+        tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - Updating
 
     @discardableResult
-    func update(with model: DailyReviewModel) -> Self {
+    func update(with model: ExpensesListViewState.Daily) -> Self {
         headerView.update(date: model.date, amount: model.amount)
-        self.expensesModels = model.expenses
+        self.expensesModels = model.expenseCategories
         tableView.reloadData()
         return self
     }

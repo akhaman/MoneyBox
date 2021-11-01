@@ -19,11 +19,4 @@ extension UIView {
         isHidden = false
         return self
     }
-
-    @discardableResult
-    func apply(to superview: UIView) -> Self {
-        superview.addSubview(self)
-        self.snp.makeConstraints { $0.edges.equalToSuperview() }
-        return self
-    }
 }

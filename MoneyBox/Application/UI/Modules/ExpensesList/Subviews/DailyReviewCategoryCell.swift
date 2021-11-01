@@ -1,19 +1,16 @@
 //
-//  CategoryCell.swift
+//  DailyReviewCategoryCell.swift
 //  MoneyBox
 //
-//  Created by Ruslan Akhmadeev on 08.09.2021.
+//  Created by Ruslan Akhmadeev on 10.09.2021.
 //
 
 import UIKit
 
-class CategoryCell: CardTableCell {
-    // MARK: - UI
+class DailyReviewCategoryCell: UITableViewCell {
 
     private lazy var categoryView: CategoryView = {
         let view = CategoryView()
-        cardView.addSubview(view)
-        view.snp.makeConstraints { $0.edges.equalToSuperview() }
         return view
     }()
 
@@ -22,6 +19,9 @@ class CategoryCell: CardTableCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .clear
+        selectionStyle = .none
+        contentView.addSubview(categoryView)
+        categoryView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
 
     required init?(coder: NSCoder) {
@@ -31,7 +31,7 @@ class CategoryCell: CardTableCell {
     // MARK: - Configuration
 
     @discardableResult
-    func update(with model: CategoryViewModel) -> Self {
+    func update(with model: ExpensesListViewState.Category) -> Self {
         categoryView.update(with: model)
         return self
     }

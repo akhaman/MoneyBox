@@ -11,32 +11,54 @@ class ExpensesListVC: UIViewController {
 
     // MARK: - Properties
 
-    let homeView = ExpensesListView()
+    private let expensesListView = ExpensesListView()
+    private let manager: ExpensesListManagerProtocol
+
+    // MARK: - Initialization
+
+    init(manager: ExpensesListManagerProtocol) {
+        self.manager = manager
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - Life Cycle
 
     override func loadView() {
-        view = homeView
+        view = expensesListView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        loadData()
     }
 
     // MARK: - Setup
 
     private func setupView() {
+        title = "Расходы"
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: Image.Icon.add.image,
             style: .plain,
             target: self,
             action: #selector(openAddExpense)
         )
-        homeView.addExpenseTapped = { [weak self] in self?.openAddExpense() }
-        homeView.update(with: [])
-        title = "Расходы"
+        
+        expensesListView.addExpenseTapped = { [weak self] in self?.openAddExpense() }
     }
+
+    // MARK: - Data Loading
+
+    private func loadData() {
+        let state = manager.loadExpenses()
+        expensesListView.update(state: state)
+    }
+
+    // MARK: - Navigation
 
     @objc private func openAddExpense() {
         let selectCategoryController = SelectCategoryVC()

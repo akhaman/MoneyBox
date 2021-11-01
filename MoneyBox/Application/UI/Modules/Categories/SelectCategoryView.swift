@@ -42,7 +42,11 @@ class SelectCategoryView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        GradientView.secondaryBackground.apply(to: self)
+        let background = GradientView.secondaryBackground
+        addSubview(background)
+        background.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 
     required init?(coder: NSCoder) {

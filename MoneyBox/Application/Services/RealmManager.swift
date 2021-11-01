@@ -19,6 +19,7 @@ class RealmManager<T: PersistedModelsConvertible> {
 
     func write(_ models: [T]) {
         let realm: Realm = try! Realm()
+
         let persistedModels = models.map(T.from(domain:))
 
         try! realm.write {
@@ -28,8 +29,8 @@ class RealmManager<T: PersistedModelsConvertible> {
 
     func fetchAll() -> [T] {
         let realm: Realm = try! Realm()
-        let result = realm.objects(T.Persisted.self).map(T.from(persisted:))
 
+        let result = realm.objects(T.Persisted.self).map(T.from(persisted:))
         return Array(result)
     }
 }
