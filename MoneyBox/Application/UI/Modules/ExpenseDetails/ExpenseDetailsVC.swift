@@ -39,7 +39,7 @@ final class ExpenseDetailsVC: UIViewController {
 
     private func setupView() {
         configureTitleView()
-        
+
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: Image.Icon.close.image,
             style: .plain,
@@ -49,8 +49,7 @@ final class ExpenseDetailsVC: UIViewController {
 
         detailsView.onDoneButtonTapped = { [weak self] output in
             guard let self = self else { return }
-            let expense = Expense.new(category: self.category, sum: output.sum, comment: output.comment)
-            self.manager.save(expense: expense)
+            self.manager.save(output: output)
             self.dismiss(animated: true)
         }
     }

@@ -36,6 +36,13 @@ class RealmManager<T: PersistedModelsConvertible> {
         return Array(result)
     }
 
+    func fetchFirst(byId id: String) -> T? {
+        let realm = try! Realm()
+
+        let result = realm.object(ofType: T.Persisted.self, forPrimaryKey: id).map(T.from(persisted:))
+        return result
+    }
+
     func observeChanges(completion: @escaping ([T]) -> Void) {
         let realm = try! Realm()
 

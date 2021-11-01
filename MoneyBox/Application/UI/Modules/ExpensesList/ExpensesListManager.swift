@@ -24,7 +24,7 @@ class ExpensesListManager: ExpensesListManagerProtocol {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                
+
                 self.onStateDidChange?(self.state)
             }
         }
@@ -69,7 +69,7 @@ extension ExpensesListManager {
         let sumSection = ExpensesListViewState.Section(title: "Всего", .monthAmount(sumAmount))
 
         let dailyExpenses = expenses.groupedBy(dateComponents: .year, .month, .day)
-            .sorted { $0.key < $1.key }
+            .sorted { $0.key > $1.key }
             .map(makeDailyExpense(fromDate: expensesInDay:))
             .map { ExpensesListViewState.Row.dailyExpenses($0) }
 

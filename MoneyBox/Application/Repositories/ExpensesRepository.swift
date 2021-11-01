@@ -9,6 +9,7 @@ import Foundation
 
 protocol ExpensesRepositoryProtocol {
     func getExpenses() -> [Expense]
+    func getExpense(byId expenseId: String) -> Expense?
     func save(expense: Expense)
     func observeChanges(_ completion: @escaping ([Expense]) -> Void) 
 }
@@ -19,6 +20,10 @@ final class ExpensesRepository: ExpensesRepositoryProtocol {
 
     func getExpenses() -> [Expense] {
         realmManager.fetchAll()
+    }
+
+    func getExpense(byId expenseId: String) -> Expense? {
+        realmManager.fetchFirst(byId: expenseId)
     }
 
     func save(expense: Expense) {

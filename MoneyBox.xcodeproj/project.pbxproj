@@ -28,6 +28,7 @@
 		CE9F0830272F125000A45676 /* ExpensesListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F082F272F125000A45676 /* ExpensesListManager.swift */; };
 		CE9F0832272F252C00A45676 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F0831272F252C00A45676 /* Date+.swift */; };
 		CE9F0834272F34C600A45676 /* ExpensesListViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F0833272F34C600A45676 /* ExpensesListViewState.swift */; };
+		CE9F08392730817B00A45676 /* ExpenseDetailsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F08382730817A00A45676 /* ExpenseDetailsState.swift */; };
 		CEA80C9426FF562900541AFB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CEA80C9326FF562900541AFB /* .swiftlint.yml */; };
 		CEC652D226E8E95E007099B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC652D126E8E95E007099B9 /* AppDelegate.swift */; };
 		CEC652DE26E8E95F007099B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC652DC26E8E95F007099B9 /* LaunchScreen.storyboard */; };
@@ -86,6 +87,7 @@
 		CE9F082F272F125000A45676 /* ExpensesListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListManager.swift; sourceTree = "<group>"; };
 		CE9F0831272F252C00A45676 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		CE9F0833272F34C600A45676 /* ExpensesListViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListViewState.swift; sourceTree = "<group>"; };
+		CE9F08382730817A00A45676 /* ExpenseDetailsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailsState.swift; sourceTree = "<group>"; };
 		CEA80C9326FF562900541AFB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		CEC652CE26E8E95E007099B9 /* MoneyBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC652D126E8E95E007099B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				CE39A90926FFB58A00A4AD61 /* ExpenseDetailsVC.swift */,
 				CE39A90C26FFB59C00A4AD61 /* ExpenseDetailsView.swift */,
 				CE9F0820272EEC8600A45676 /* ExpenseDetailsManager.swift */,
+				CE9F08382730817A00A45676 /* ExpenseDetailsState.swift */,
 			);
 			path = ExpenseDetails;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				CEC652F026E8EC20007099B9 /* InfoView.swift in Sources */,
 				CEC6620926EBED8B00F9C187 /* SelectCategoryView.swift in Sources */,
 				CE89C7C226EB5EB70014ED57 /* HeaderAmountCell.swift in Sources */,
+				CE9F08392730817B00A45676 /* ExpenseDetailsState.swift in Sources */,
 				CEC6620B26EBEFBF00F9C187 /* CategoryCollectionCell.swift in Sources */,
 				CED1643B26E937C80019E451 /* GeneratedColors.swift in Sources */,
 				CEC652F626E8EC29007099B9 /* CardTableCell.swift in Sources */,

@@ -7,25 +7,11 @@
 
 import UIKit
 
-struct ExpenseDetailsViewOutput {
-    let sum: Int
-    let comment: String
-
-    init?(sum: String?, comment: String?)  {
-        guard let sum = sum,
-              let intSum = Int(sum),
-              let comment = comment else { return nil }
-
-        self.sum = intSum
-        self.comment = comment
-    }
-}
-
 final class ExpenseDetailsView: UIView {
 
     // MARK: - Callbacks
 
-    var onDoneButtonTapped: ((_ output: ExpenseDetailsViewOutput) -> Void)?
+    var onDoneButtonTapped: ((_ output: ExpenseDetails.ViewOutput) -> Void)?
 
     // MARK: - Subviews
 
@@ -33,8 +19,8 @@ final class ExpenseDetailsView: UIView {
     private lazy var dateValueLabel: UILabel = descriptionLabel(withText: "cегодня")
     private lazy var sumLabel: UILabel = descriptionLabel(withText: "Сумма:")
     private lazy var commentLabel: UILabel = descriptionLabel(withText: "Комментарий:")
-    private lazy var commentTextField: UITextField = textField(withPlaceholder: "введите заметку")
-    private lazy var sumTextField: UITextField = textField(withPlaceholder: "введите сумму")
+    private lazy var commentTextField: UITextField = textField(withPlaceholder: "введите заметку", keyboard: .default)
+    private lazy var sumTextField: UITextField = textField(withPlaceholder: "введите сумму", keyboard: .numberPad)
 
     private lazy var doneButton: UIButton = {
         let button = UIButton(type: .system)
@@ -110,8 +96,9 @@ final class ExpenseDetailsView: UIView {
         return label
     }
 
-    private func textField(withPlaceholder placeholder: String) -> UITextField {
+    private func textField(withPlaceholder placeholder: String, keyboard: UIKeyboardType) -> UITextField {
         let field = TextFieldWithInsets()
+        field.keyboardType = keyboard
         field.attributedPlaceholder = NSAttributedString(
             string: placeholder,
             attributes: [
@@ -128,8 +115,18 @@ final class ExpenseDetailsView: UIView {
         return field
     }
 
+    // MARK: - Updating
+
+    func update(withState state: ExpenseDetails.ViewState) {
+        dateValueLabel.text = state.dateValue
+        sumTextField.text = state.sumValue
+        commentTextField.text = state.commentValue
+    }
+
+    // MARK: - Events
+
     @objc private func buttonDidTap() {
-        guard let output = ExpenseDetailsViewOutput(sum: sumTextField.text, comment: commentTextField.text) else { return }
+        guard let output = ExpenseDetails.ViewOutput(sum: sumTextField.text, comment: commentTextField.text) else { return }
         onDoneButtonTapped?(output)
     }
 
