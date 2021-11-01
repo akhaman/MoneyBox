@@ -14,18 +14,17 @@ class HeaderAmountCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 34, weight: .medium)
         label.textColor = Colors.unselected.color
-
-        contentView.addSubview(label)
-        label.snp.makeConstraints { $0.edges.equalToSuperview().inset(16) }
         return label
     }()
 
-    // MARK: - Init
+    // MARK: - Initialization
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
         backgroundColor = .clear
+        contentView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { $0.edges.equalToSuperview().inset(16) }
     }
 
     required init?(coder: NSCoder) {

@@ -9,12 +9,21 @@ import UIKit
 import SnapKit
 
 class InfoView: UIView {
+
+    // MARK: - Callbacks
+
+    var onAddButtonDidTap: VoidClosure?
+
     // MARK: - UI
 
-    private lazy var imageView = UIImageView()
+    private lazy var imageView: UIImageView = {
+        let view = UIImageView(image: Image.Info.donation.image)
+        return view
+    }()
 
     private lazy var messageLabel: UILabel = {
         let label = UILabel()
+        label.text = "У вас пока нет расходов"
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.textColor = Colors.unselected.color
         label.textAlignment = .center
@@ -22,7 +31,13 @@ class InfoView: UIView {
         return label
     }()
 
-    private lazy var messageButton = MessageButton()
+    private lazy var messageButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("добавить", for: .normal)
+        button.setTitleColor(Colors.primaryText.color, for: .normal)
+        button.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
+        return button
+    }()
 
     // MARK: - Initialization
 
@@ -35,25 +50,11 @@ class InfoView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    convenience init(image: UIImage, message: String, button: ButtonModel? = nil) {
-        self.init()
-        configure(image: image, message: message, button: button)
-    }
-
-    // MARK: - Confuguration
-
-    func configure(image: UIImage, message: String, button: ButtonModel? = nil) {
-        imageView.image = image
-        messageLabel.text = message
-
-        button.ifPresent {
-            messageButton.show().configure(with: $0)
-        } orElse: {
-            messageButton.hide()
-        }
-    }
-
     // MARK: - Helpers
+
+    @objc private func buttonDidTap() {
+        onAddButtonDidTap?()
+    }
 
     private func setupView() {
         addSubview(imageView)

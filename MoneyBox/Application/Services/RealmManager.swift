@@ -17,8 +17,10 @@ protocol PersistedModelsConvertible {
 // swiftlint:disable force_try
 class RealmManager<T: PersistedModelsConvertible> {
 
+    private var token: NotificationToken?
+
     func write(_ models: [T]) {
-        let realm: Realm = try! Realm()
+        let realm = try! Realm()
 
         let persistedModels = models.map(T.from(domain:))
 
@@ -28,9 +30,20 @@ class RealmManager<T: PersistedModelsConvertible> {
     }
 
     func fetchAll() -> [T] {
-        let realm: Realm = try! Realm()
+        let realm = try! Realm()
 
         let result = realm.objects(T.Persisted.self).map(T.from(persisted:))
         return Array(result)
+    }
+
+    func observeChanges(completion: @escaping ([T]) -> Void) {
+        let realm = try! Realm()
+
+        token = realm.observe { notification, realm in
+            guard notification == .didChange else { return }
+            
+            let result = realm.objects(T.Persisted.self).map(T.from(persisted:))
+            completion(Array(result))
+        }
     }
 }

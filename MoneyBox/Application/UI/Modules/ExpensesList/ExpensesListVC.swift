@@ -34,7 +34,7 @@ class ExpensesListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        loadData()
+        setupObservation()
     }
 
     // MARK: - Setup
@@ -53,9 +53,12 @@ class ExpensesListVC: UIViewController {
 
     // MARK: - Data Loading
 
-    private func loadData() {
-        let state = manager.loadExpenses()
-        expensesListView.update(state: state)
+    private func setupObservation() {
+        manager.observeStateChanges { [weak self] state in
+            self?.expensesListView.update(state: state)
+        }
+        
+        manager.loadExpenses()
     }
 
     // MARK: - Navigation

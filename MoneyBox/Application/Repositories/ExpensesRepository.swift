@@ -10,6 +10,7 @@ import Foundation
 protocol ExpensesRepositoryProtocol {
     func getExpenses() -> [Expense]
     func save(expense: Expense)
+    func observeChanges(_ completion: @escaping ([Expense]) -> Void) 
 }
 
 final class ExpensesRepository: ExpensesRepositoryProtocol {
@@ -22,5 +23,9 @@ final class ExpensesRepository: ExpensesRepositoryProtocol {
 
     func save(expense: Expense) {
         realmManager.write([expense])
+    }
+
+    func observeChanges(_ completion: @escaping ([Expense]) -> Void) {
+        realmManager.observeChanges(completion: completion)
     }
 }

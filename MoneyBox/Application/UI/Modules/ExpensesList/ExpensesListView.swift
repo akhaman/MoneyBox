@@ -12,20 +12,19 @@ class ExpensesListView: UIView {
     
     // MARK: - Callbacks
 
-    var addExpenseTapped: VoidClosure?
+    var addExpenseTapped: VoidClosure? {
+        get {
+            infoView.onAddButtonDidTap
+        }
+        set {
+            infoView.onAddButtonDidTap = newValue
+        }
+    }
 
     // MARK: - Subviews
 
-    private lazy var infoView = InfoView(
-        image: Image.Info.donation.image,
-        message: "У вас пока нет расходов",
-        button: .init(title: "добавить") { [weak self] in self?.addExpenseTapped?() }
-    )
-
+    private lazy var infoView = InfoView()
     private lazy var list = DailyReviewListView()
-    // MARK: - State
-
-    private var sections: [ExpensesListViewState.Section] = []
 
     // MARK: - Init
 
@@ -58,13 +57,14 @@ class ExpensesListView: UIView {
 
     func update(state: ExpensesListViewState) {
 
-        if state.isEmpty {
+        switch state {
+        case .empty:
             infoView.show()
             list.hide()
-        } else {
+        case .loaded(let sections):
             infoView.hide()
             list.show()
-            list.update(with: state.sections)
+            list.update(with: sections)
         }
     }
 }

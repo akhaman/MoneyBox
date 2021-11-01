@@ -1,5 +1,5 @@
 //
-//  ExpensesListViewModel.swift
+//  ExpensesListViewState.swift
 //  MoneyBox
 //
 //  Created by Ruslan Akhmadeev on 31.10.2021.
@@ -7,20 +7,14 @@
 
 import UIKit
 
-struct ExpensesListViewState {
-    let sections: [Section]
-
-    var isEmpty: Bool { sections.isEmpty }
+enum ExpensesListViewState {
+    case empty
+    case loaded(sections: [Section])
 }
 
 extension ExpensesListViewState {
 
     typealias Section = SectionModel<Row>
-
-//    struct DailyExpenses {
-//        let date: String
-//        let expenseCategories: [Category]
-//    }
 
     enum Row {
         case monthAmount(String)
