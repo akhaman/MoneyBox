@@ -65,7 +65,7 @@ extension DailyReviewListView: UITableViewDataSource {
 
         switch item {
         case .monthAmount(let amount):
-            return tableView.dequeue(HeaderAmountCell.self).update(with: amount)
+            return tableView.dequeue(HeaderAmountCell.self).update(withAmount: amount)
         case .dailyExpenses(let expensesModel):
             return tableView.dequeue(DailyReviewCell.self).update(with: expensesModel)
         }

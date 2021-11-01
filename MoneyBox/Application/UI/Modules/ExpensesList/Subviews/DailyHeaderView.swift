@@ -55,7 +55,7 @@ class DailyHeaderView: UIView {
     @discardableResult
     func update(date: String, amount: String) -> Self {
         dateLabel.text = date
-        amountLabel.text = date
+        amountLabel.text = amount + "₽"
         return self
     }
 }
