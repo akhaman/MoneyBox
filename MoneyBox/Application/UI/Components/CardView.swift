@@ -8,6 +8,7 @@
 import UIKit
 
 class CardView: UIView {
+    
     private let cornerRadius: CGFloat
     private var animationsEnabled = true
 

@@ -17,8 +17,6 @@
 		CE39A90526FF720900A4AD61 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39A90426FF720900A4AD61 /* Expense.swift */; };
 		CE39A90A26FFB58A00A4AD61 /* ExpenseDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39A90926FFB58A00A4AD61 /* ExpenseDetailsVC.swift */; };
 		CE39A90D26FFB59C00A4AD61 /* ExpenseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39A90C26FFB59C00A4AD61 /* ExpenseDetailsView.swift */; };
-		CE39A90F26FFBB9500A4AD61 /* CardFormTransitioningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39A90E26FFBB9500A4AD61 /* CardFormTransitioningManager.swift */; };
-		CE63130726F4FE94009A9EB2 /* DITranquillity in Frameworks */ = {isa = PBXBuildFile; productRef = CE63130626F4FE94009A9EB2 /* DITranquillity */; };
 		CE6A779E26E932BF00F8B1D3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6A779D26E932BF00F8B1D3 /* Colors.xcassets */; };
 		CE89C7C226EB5EB70014ED57 /* HeaderAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89C7C126EB5EB70014ED57 /* HeaderAmountCell.swift */; };
 		CE9825EC26EA2BAE00870C43 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9825EB26EA2BAE00870C43 /* CardView.swift */; };
@@ -39,9 +37,7 @@
 		CEC652D226E8E95E007099B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC652D126E8E95E007099B9 /* AppDelegate.swift */; };
 		CEC652DE26E8E95F007099B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC652DC26E8E95F007099B9 /* LaunchScreen.storyboard */; };
 		CEC652E626E8EB34007099B9 /* ExpensesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC652E526E8EB34007099B9 /* ExpensesListVC.swift */; };
-		CEC652ED26E8EC13007099B9 /* MessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC652EC26E8EC13007099B9 /* MessageButton.swift */; };
 		CEC652F026E8EC20007099B9 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC652EE26E8EC20007099B9 /* InfoView.swift */; };
-		CEC652F126E8EC20007099B9 /* ExpensesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC652EF26E8EC20007099B9 /* ExpensesListView.swift */; };
 		CEC652F626E8EC29007099B9 /* CardTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC652F326E8EC29007099B9 /* CardTableCell.swift */; };
 		CEC652F726E8EC29007099B9 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC652F426E8EC29007099B9 /* CategoryView.swift */; };
 		CEC652FB26E8EC3C007099B9 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC652F826E8EC3C007099B9 /* UITableView+.swift */; };
@@ -56,9 +52,8 @@
 		CED1643A26E937C80019E451 /* GeneratedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1643826E937C80019E451 /* GeneratedImages.swift */; };
 		CED1643B26E937C80019E451 /* GeneratedColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1643926E937C80019E451 /* GeneratedColors.swift */; };
 		CED1643D26E93DF00019E451 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1643C26E93DEF0019E451 /* GradientView.swift */; };
-		CED1644026E949ED0019E451 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1643F26E949ED0019E451 /* Button.swift */; };
 		CED1644226E952020019E451 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1644126E952020019E451 /* CategoryCell.swift */; };
-		CED1644426E952700019E451 /* ExpensesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1644326E952700019E451 /* ExpensesList.swift */; };
+		CED1644426E952700019E451 /* ExpensesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1644326E952700019E451 /* ExpensesListView.swift */; };
 		CEDA05EA26F512B600829B02 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEDA05E926F512B600829B02 /* SnapKit */; };
 		CEEC38E326EA7B89006E1234 /* DailyReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC38E226EA7B89006E1234 /* DailyReviewCell.swift */; };
 		CEEC38E626EA7BE0006E1234 /* DailyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC38E526EA7BE0006E1234 /* DailyHeaderView.swift */; };
@@ -66,7 +61,6 @@
 		CEEC38EC26EB359C006E1234 /* DailyReviewCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC38EB26EB359C006E1234 /* DailyReviewCategoryCell.swift */; };
 		CEEC38EE26EB36E1006E1234 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC38ED26EB36E1006E1234 /* Layout.swift */; };
 		CEEC38F026EB3A8B006E1234 /* CGRect+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC38EF26EB3A8B006E1234 /* CGRect+.swift */; };
-		CEEC38F426EB3D3C006E1234 /* CardCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC38F326EB3D3C006E1234 /* CardCollectionCell.swift */; };
 		CEEC38F626EB4100006E1234 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC38F526EB4100006E1234 /* UICollectionView+.swift */; };
 		CEEFAABE26E9205F005169C7 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = CEEFAABD26E9205F005169C7 /* swiftgen.yml */; };
 		CEEFAAC726E92F61005169C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEFAAC626E92F61005169C7 /* Images.xcassets */; };
@@ -85,7 +79,6 @@
 		CE39A90426FF720900A4AD61 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		CE39A90926FFB58A00A4AD61 /* ExpenseDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailsVC.swift; sourceTree = "<group>"; };
 		CE39A90C26FFB59C00A4AD61 /* ExpenseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailsView.swift; sourceTree = "<group>"; };
-		CE39A90E26FFBB9500A4AD61 /* CardFormTransitioningManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFormTransitioningManager.swift; sourceTree = "<group>"; };
 		CE6A779D26E932BF00F8B1D3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		CE89C7C126EB5EB70014ED57 /* HeaderAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAmountCell.swift; sourceTree = "<group>"; };
 		CE9825EB26EA2BAE00870C43 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -106,9 +99,7 @@
 		CEC652DD26E8E95F007099B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEC652DF26E8E95F007099B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = MoneyBox/Configuration/Info.plist; sourceTree = SOURCE_ROOT; };
 		CEC652E526E8EB34007099B9 /* ExpensesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListVC.swift; sourceTree = "<group>"; };
-		CEC652EC26E8EC13007099B9 /* MessageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageButton.swift; sourceTree = "<group>"; };
 		CEC652EE26E8EC20007099B9 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		CEC652EF26E8EC20007099B9 /* ExpensesListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesListView.swift; sourceTree = "<group>"; };
 		CEC652F326E8EC29007099B9 /* CardTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableCell.swift; sourceTree = "<group>"; };
 		CEC652F426E8EC29007099B9 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		CEC652F826E8EC3C007099B9 /* UITableView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
@@ -123,16 +114,14 @@
 		CED1643826E937C80019E451 /* GeneratedImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedImages.swift; sourceTree = "<group>"; };
 		CED1643926E937C80019E451 /* GeneratedColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedColors.swift; sourceTree = "<group>"; };
 		CED1643C26E93DEF0019E451 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		CED1643F26E949ED0019E451 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		CED1644126E952020019E451 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
-		CED1644326E952700019E451 /* ExpensesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesList.swift; sourceTree = "<group>"; };
+		CED1644326E952700019E451 /* ExpensesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListView.swift; sourceTree = "<group>"; };
 		CEEC38E226EA7B89006E1234 /* DailyReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReviewCell.swift; sourceTree = "<group>"; };
 		CEEC38E526EA7BE0006E1234 /* DailyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyHeaderView.swift; sourceTree = "<group>"; };
 		CEEC38E726EA846C006E1234 /* DailyReviewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReviewListView.swift; sourceTree = "<group>"; };
 		CEEC38EB26EB359C006E1234 /* DailyReviewCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReviewCategoryCell.swift; sourceTree = "<group>"; };
 		CEEC38ED26EB36E1006E1234 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		CEEC38EF26EB3A8B006E1234 /* CGRect+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+.swift"; sourceTree = "<group>"; };
-		CEEC38F326EB3D3C006E1234 /* CardCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionCell.swift; sourceTree = "<group>"; };
 		CEEC38F526EB4100006E1234 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
 		CEEFAABD26E9205F005169C7 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.yaml; };
 		CEEFAAC626E92F61005169C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -143,7 +132,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE63130726F4FE94009A9EB2 /* DITranquillity in Frameworks */,
 				CEDA05EA26F512B600829B02 /* SnapKit in Frameworks */,
 				CE9F0824272EFCF700A45676 /* Realm in Frameworks */,
 				CE9F0826272EFCF700A45676 /* RealmSwift in Frameworks */,
@@ -190,6 +178,14 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		CE1FD8762731CFE100935538 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE9F081E272EE17000A45676 /* TextFieldWithInsets.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CE39A90626FF740000A4AD61 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,28 +221,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		CE9F0819272EBEE900A45676 /* Transitions */ = {
-			isa = PBXGroup;
-			children = (
-				CE39A90E26FFBB9500A4AD61 /* CardFormTransitioningManager.swift */,
-			);
-			path = Transitions;
-			sourceTree = "<group>";
-		};
 		CE9F0827272EFE8200A45676 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CE9F082B272F002F00A45676 /* ExpensesRepository.swift */,
 				CE9F0828272EFE8D00A45676 /* RealmManager.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		CE9F082A272F001F00A45676 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-				CE9F082B272F002F00A45676 /* ExpensesRepository.swift */,
-			);
-			path = Repositories;
 			sourceTree = "<group>";
 		};
 		CE9F0835272F38A000A45676 /* Subviews */ = {
@@ -255,7 +236,6 @@
 				CEEC38E226EA7B89006E1234 /* DailyReviewCell.swift */,
 				CEEC38E526EA7BE0006E1234 /* DailyHeaderView.swift */,
 				CEEC38EB26EB359C006E1234 /* DailyReviewCategoryCell.swift */,
-				CED1644326E952700019E451 /* ExpensesList.swift */,
 				CEC652F426E8EC29007099B9 /* CategoryView.swift */,
 				CED1644126E952020019E451 /* CategoryCell.swift */,
 				CE89C7C126EB5EB70014ED57 /* HeaderAmountCell.swift */,
@@ -303,7 +283,7 @@
 				CEC652FE26E8EC44007099B9 /* Typealiases.swift */,
 				CE97C9C426FF502F00B57EE5 /* Models */,
 				CEC652EB26E8EBD1007099B9 /* Extensions */,
-				CE9F081E272EE17000A45676 /* TextFieldWithInsets.swift */,
+				CE1FD8762731CFE100935538 /* Views */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -335,19 +315,9 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		CEC6620226EBC5EC00F9C187 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				CEEC38F326EB3D3C006E1234 /* CardCollectionCell.swift */,
-				CEC652F326E8EC29007099B9 /* CardTableCell.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		CEC6621126ECB62600F9C187 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				CE9F082A272F001F00A45676 /* Repositories */,
 				CE9F0827272EFE8200A45676 /* Services */,
 				CEC6621226ECB62C00F9C187 /* UI */,
 				CEC6622726ECBCEC00F9C187 /* Models */,
@@ -358,7 +328,6 @@
 		CEC6621226ECB62C00F9C187 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				CE9F0819272EBEE900A45676 /* Transitions */,
 				CEC6622E26ECC07E00F9C187 /* Constants */,
 				CEC6621926ECB84900F9C187 /* EntryPoint */,
 				CEC6621A26ECB85600F9C187 /* Modules */,
@@ -407,8 +376,8 @@
 			isa = PBXGroup;
 			children = (
 				CE9F0835272F38A000A45676 /* Subviews */,
-				CEC652EF26E8EC20007099B9 /* ExpensesListView.swift */,
 				CEC652E526E8EB34007099B9 /* ExpensesListVC.swift */,
+				CED1644326E952700019E451 /* ExpensesListView.swift */,
 				CE9F082F272F125000A45676 /* ExpensesListManager.swift */,
 				CE9F0833272F34C600A45676 /* ExpensesListViewState.swift */,
 			);
@@ -418,9 +387,9 @@
 		CEC6621F26ECB92400F9C187 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CEC6622D26ECBEA000F9C187 /* Button */,
-				CEEC38E126EA5E97006E1234 /* Cells */,
-				CEC6622426ECBC5F00F9C187 /* View */,
+				CE9825EB26EA2BAE00870C43 /* CardView.swift */,
+				CEC652F326E8EC29007099B9 /* CardTableCell.swift */,
+				CED1643C26E93DEF0019E451 /* GradientView.swift */,
 				CE9F081A272ED3A800A45676 /* NavigationBar.swift */,
 			);
 			path = Components;
@@ -436,15 +405,6 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		CEC6622426ECBC5F00F9C187 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				CED1643C26E93DEF0019E451 /* GradientView.swift */,
-				CE9825EB26EA2BAE00870C43 /* CardView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		CEC6622726ECBCEC00F9C187 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,29 +414,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		CEC6622D26ECBEA000F9C187 /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				CED1643F26E949ED0019E451 /* Button.swift */,
-				CEC652EC26E8EC13007099B9 /* MessageButton.swift */,
-			);
-			path = Button;
-			sourceTree = "<group>";
-		};
 		CEC6622E26ECC07E00F9C187 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 				CEEC38ED26EB36E1006E1234 /* Layout.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		CEEC38E126EA5E97006E1234 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				CEC6620226EBC5EC00F9C187 /* Base */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,7 +442,6 @@
 			);
 			name = MoneyBox;
 			packageProductDependencies = (
-				CE63130626F4FE94009A9EB2 /* DITranquillity */,
 				CEDA05E926F512B600829B02 /* SnapKit */,
 				CE9F0823272EFCF700A45676 /* Realm */,
 				CE9F0825272EFCF700A45676 /* RealmSwift */,
@@ -532,7 +474,6 @@
 			);
 			mainGroup = CEC652C526E8E95E007099B9;
 			packageReferences = (
-				CE63130526F4FE93009A9EB2 /* XCRemoteSwiftPackageReference "DITranquillity" */,
 				CEDA05E826F512B600829B02 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CE9F0822272EFCF700A45676 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
@@ -634,10 +575,9 @@
 				CEC6620B26EBEFBF00F9C187 /* CategoryCollectionCell.swift in Sources */,
 				CED1643B26E937C80019E451 /* GeneratedColors.swift in Sources */,
 				CEC652F626E8EC29007099B9 /* CardTableCell.swift in Sources */,
-				CED1644426E952700019E451 /* ExpensesList.swift in Sources */,
+				CED1644426E952700019E451 /* ExpensesListView.swift in Sources */,
 				CE9F0821272EEC8600A45676 /* ExpenseDetailsManager.swift in Sources */,
 				CEC652D226E8E95E007099B9 /* AppDelegate.swift in Sources */,
-				CEEC38F426EB3D3C006E1234 /* CardCollectionCell.swift in Sources */,
 				CEEC38EE26EB36E1006E1234 /* Layout.swift in Sources */,
 				CEC652FB26E8EC3C007099B9 /* UITableView+.swift in Sources */,
 				CEC652FC26E8EC3C007099B9 /* UIView+.swift in Sources */,
@@ -653,13 +593,11 @@
 				CEEC38F026EB3A8B006E1234 /* CGRect+.swift in Sources */,
 				CE9F0834272F34C600A45676 /* ExpensesListViewState.swift in Sources */,
 				CEEC38E326EA7B89006E1234 /* DailyReviewCell.swift in Sources */,
-				CE39A90F26FFBB9500A4AD61 /* CardFormTransitioningManager.swift in Sources */,
 				CEC652F726E8EC29007099B9 /* CategoryView.swift in Sources */,
 				CEC652FD26E8EC3C007099B9 /* Optional+.swift in Sources */,
 				CEC6620726EBED7100F9C187 /* SelectCategoryVC.swift in Sources */,
 				CE9F082C272F002F00A45676 /* ExpensesRepository.swift in Sources */,
 				CE1FD86C273190F800935538 /* DailyExpenses.swift in Sources */,
-				CED1644026E949ED0019E451 /* Button.swift in Sources */,
 				CEC652FF26E8EC44007099B9 /* Typealiases.swift in Sources */,
 				CE9F081F272EE17000A45676 /* TextFieldWithInsets.swift in Sources */,
 				CEC652E626E8EB34007099B9 /* ExpensesListVC.swift in Sources */,
@@ -668,10 +606,8 @@
 				CE1FD8752731BB9A00935538 /* UIViewController+.swift in Sources */,
 				CE9F0832272F252C00A45676 /* Date+.swift in Sources */,
 				CE1FD8712731992400935538 /* DailyExpenseCell.swift in Sources */,
-				CEC652ED26E8EC13007099B9 /* MessageButton.swift in Sources */,
 				CE1FD86A2731907200935538 /* DailyExpensesListVC.swift in Sources */,
 				CE9825EC26EA2BAE00870C43 /* CardView.swift in Sources */,
-				CEC652F126E8EC20007099B9 /* ExpensesListView.swift in Sources */,
 				CE9F082E272F014100A45676 /* PersistedExpense.swift in Sources */,
 				CE9F081D272EDA3600A45676 /* AttributedString+.swift in Sources */,
 				CE9F0830272F125000A45676 /* ExpensesListManager.swift in Sources */,
@@ -878,14 +814,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CE63130526F4FE93009A9EB2 /* XCRemoteSwiftPackageReference "DITranquillity" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ivlevAstef/DITranquillity";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.3.3;
-			};
-		};
 		CE9F0822272EFCF700A45676 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
@@ -905,11 +833,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CE63130626F4FE94009A9EB2 /* DITranquillity */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE63130526F4FE93009A9EB2 /* XCRemoteSwiftPackageReference "DITranquillity" */;
-			productName = DITranquillity;
-		};
 		CE9F0823272EFCF700A45676 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE9F0822272EFCF700A45676 /* XCRemoteSwiftPackageReference "realm-cocoa" */;

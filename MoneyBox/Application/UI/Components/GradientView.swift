@@ -8,6 +8,7 @@
 import UIKit
 
 class GradientView: UIView {
+
     override open class var layerClass: AnyClass {
         CAGradientLayer.self
     }
@@ -18,6 +19,7 @@ class GradientView: UIView {
 }
 
 extension GradientView {
+
     static var mainBackground: GradientView {
         let view = GradientView()
         let layer = view.gradientLayer

@@ -9,9 +9,13 @@ import UIKit
 
 class ExpensesListVC: UIViewController {
 
-    // MARK: - Properties
+    // MARK: - Subviews
 
-    private let expensesListView = ExpensesListView()
+    private lazy var expensesListView = DailyReviewListView()
+    private lazy var infoView = InfoView()
+
+    // MARK: - Dependencies
+
     private let manager: ExpensesListManagerProtocol
 
     // MARK: - Initialization
@@ -28,13 +32,14 @@ class ExpensesListVC: UIViewController {
     // MARK: - Life Cycle
 
     override func loadView() {
-        view = expensesListView
+        view = GradientView.mainBackground
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupDataObservation()
+        manager.loadExpenses()
     }
 
     // MARK: - Setup
@@ -48,19 +53,42 @@ class ExpensesListVC: UIViewController {
             target: self,
             action: #selector(openAddExpense)
         )
-        
-        expensesListView.addExpenseTapped = { [weak self] in self?.openAddExpense() }
-        expensesListView.onSelectDailyReview = { [weak self] in self?.showExpensesInDay(date: $0.date, title: $0.stringDate) }
+
+        view.addSubview(expensesListView)
+        expensesListView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+
+        expensesListView.onSelectDailyReview = { [weak self] in
+            self?.showExpensesInDay(date: $0.date, title: $0.stringDate)
+        }
+
+        view.addSubview(infoView)
+        infoView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+
+        infoView.onAddButtonDidTap = { [weak self] in
+            self?.openAddExpense()
+        }
     }
 
     // MARK: - Data Loading
 
     private func setupDataObservation() {
         manager.observeStateChanges { [weak self] state in
-            self?.expensesListView.update(state: state)
+            guard let self = self else { return }
+
+            switch state {
+            case .empty:
+                self.infoView.show()
+                self.expensesListView.hide()
+            case .loaded(let sections):
+                self.infoView.hide()
+                self.expensesListView.show()
+                self.expensesListView.update(with: sections)
+            }
         }
-        
-        manager.loadExpenses()
     }
 
     // MARK: - Navigation

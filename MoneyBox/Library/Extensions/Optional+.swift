@@ -16,19 +16,4 @@ extension Optional {
             return false
         }
     }
-
-    @discardableResult
-    func ifPresent(
-        _ action: (_ wrappedValue: Wrapped) -> Void,
-        orElse elseAction: (VoidClosure) = {}
-    ) -> Self {
-        switch self {
-        case .some(let value):
-            action(value)
-        case .none:
-            elseAction()
-        }
-
-        return self
-    }
 }

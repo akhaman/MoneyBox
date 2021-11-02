@@ -1,44 +1,34 @@
 //
-//  ExpensesListView.swift
+//  ExpensesTableView.swift
 //  MoneyBox
 //
-//  Created by Ruslan Akhmadeev on 07.09.2021.
+//  Created by Ruslan Akhmadeev on 08.09.2021.
 //
 
 import UIKit
-import SnapKit
 
 class ExpensesListView: UIView {
+    // MARK: - UI
 
-    // MARK: - Subviews
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.dataSource = self
+        tableView.rowHeight = 46
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
+        tableView.delaysContentTouches = false
+        tableView.register(CategoryCell.self)
+        return tableView
+    }()
 
-    private lazy var infoView = InfoView()
-    private lazy var list = DailyReviewListView()
+    // MARK: - Properties
 
-    // MARK: - Callbacks
-
-    var addExpenseTapped: VoidClosure? {
-        get {
-            infoView.onAddButtonDidTap
-        }
-        set {
-            infoView.onAddButtonDidTap = newValue
-        }
-    }
-
-    var onSelectDailyReview: ((ExpensesListViewState.Daily) -> Void)? {
-        get {
-            list.onSelectDailyReview
-        }
-        set {
-            list.onSelectDailyReview = newValue
-        }
-    }
+    private var models: [ExpensesListViewState.Category] = []
 
     // MARK: - Init
 
-    init() {
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setupView()
     }
 
@@ -46,34 +36,29 @@ class ExpensesListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Initial Configuration
+    // MARK: - Helpers
 
     private func setupView() {
-        let background = GradientView.mainBackground
-        addSubview(background)
-        background.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-
-        addSubview(list)
-        list.snp.makeConstraints { $0.edges.equalToSuperview() }
-
-        addSubview(infoView)
-        infoView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        addSubview(tableView)
+        tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
 
     // MARK: - Updating
 
-    func update(state: ExpensesListViewState) {
+    func update(with items: [ExpensesListViewState.Category]) {
+        self.models = items
+        tableView.reloadData()
+    }
+}
 
-        switch state {
-        case .empty:
-            infoView.show()
-            list.hide()
-        case .loaded(let sections):
-            infoView.hide()
-            list.show()
-            list.update(with: sections)
-        }
+// MARK: - UITableViewDataSource
+
+extension ExpensesListView: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        models.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.dequeue(CategoryCell.self).update(with: models[indexPath.row])
     }
 }

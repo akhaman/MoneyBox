@@ -9,9 +9,12 @@ import UIKit
 import SnapKit
 
 class CardTableCell: UITableViewCell {
-    // MARK: - UI
+
+    // MARK: - Subviews
 
     private(set) lazy var cardView = CardView()
+
+    // MARK: - Properties
 
     var insets = UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16) {
         didSet {

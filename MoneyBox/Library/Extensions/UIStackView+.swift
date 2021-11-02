@@ -30,4 +30,10 @@ extension UIStackView {
         self.spacing = spacing
         return self
     }
+
+    @discardableResult
+    func distribution(_ distribution: Distribution) -> Self {
+        self.distribution = distribution
+        return self
+    }
 }
