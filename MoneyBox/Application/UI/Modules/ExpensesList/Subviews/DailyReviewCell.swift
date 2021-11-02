@@ -8,6 +8,14 @@
 import UIKit
 import SnapKit
 
+extension DailyReviewCell {
+    private class NotSelectableTableView: UITableView {
+        override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+            false
+        }
+    }
+}
+
 class DailyReviewCell: CardTableCell {
     
     // MARK: - UI
@@ -15,7 +23,7 @@ class DailyReviewCell: CardTableCell {
     private lazy var headerView = DailyHeaderView(frame: CGRect(height: Layout.dailyHeaderHeight))
 
     private lazy var tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = NotSelectableTableView()
         tableView.dataSource = self
         tableView.rowHeight = Layout.dailyCategoryHeight
         tableView.separatorStyle = .none
@@ -36,7 +44,9 @@ class DailyReviewCell: CardTableCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         cardView.addSubview(tableView)
-        tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        tableView.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8))
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -47,7 +57,7 @@ class DailyReviewCell: CardTableCell {
 
     @discardableResult
     func update(with model: ExpensesListViewState.Daily) -> Self {
-        headerView.update(date: model.date, amount: model.amount)
+        headerView.update(date: model.stringDate, amount: model.amount)
         self.expensesModels = model.expenseCategories
         tableView.reloadData()
         return self

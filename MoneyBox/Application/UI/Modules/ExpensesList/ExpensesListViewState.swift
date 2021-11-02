@@ -22,7 +22,8 @@ extension ExpensesListViewState {
     }
 
     struct Daily {
-        let date: String
+        let date: Date
+        let stringDate: String
         let amount: String
         let expenseCategories: [Category]
     }

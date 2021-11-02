@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		77373F9E39E6E75BB55A1789 /* Pods_MoneyBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 796E2846640FB007D83AC145 /* Pods_MoneyBox.framework */; };
+		CE1FD86A2731907200935538 /* DailyExpensesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FD8692731907200935538 /* DailyExpensesListVC.swift */; };
+		CE1FD86C273190F800935538 /* DailyExpenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FD86B273190F800935538 /* DailyExpenses.swift */; };
+		CE1FD86E273193F200935538 /* DailyExpensesListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FD86D273193F200935538 /* DailyExpensesListManager.swift */; };
+		CE1FD8712731992400935538 /* DailyExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FD8702731992400935538 /* DailyExpenseCell.swift */; };
+		CE1FD87327319AEC00935538 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FD87227319AEC00935538 /* UIStackView+.swift */; };
+		CE1FD8752731BB9A00935538 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1FD8742731BB9A00935538 /* UIViewController+.swift */; };
 		CE39A90526FF720900A4AD61 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39A90426FF720900A4AD61 /* Expense.swift */; };
 		CE39A90A26FFB58A00A4AD61 /* ExpenseDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39A90926FFB58A00A4AD61 /* ExpenseDetailsVC.swift */; };
 		CE39A90D26FFB59C00A4AD61 /* ExpenseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39A90C26FFB59C00A4AD61 /* ExpenseDetailsView.swift */; };
@@ -70,6 +76,12 @@
 		16F448DAD015A4D640A772F0 /* Pods-MoneyBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyBox.debug.xcconfig"; path = "Target Support Files/Pods-MoneyBox/Pods-MoneyBox.debug.xcconfig"; sourceTree = "<group>"; };
 		796E2846640FB007D83AC145 /* Pods_MoneyBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		859C0B15C04A7F4EFFF1516B /* Pods-MoneyBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyBox.release.xcconfig"; path = "Target Support Files/Pods-MoneyBox/Pods-MoneyBox.release.xcconfig"; sourceTree = "<group>"; };
+		CE1FD8692731907200935538 /* DailyExpensesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyExpensesListVC.swift; sourceTree = "<group>"; };
+		CE1FD86B273190F800935538 /* DailyExpenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyExpenses.swift; sourceTree = "<group>"; };
+		CE1FD86D273193F200935538 /* DailyExpensesListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyExpensesListManager.swift; sourceTree = "<group>"; };
+		CE1FD8702731992400935538 /* DailyExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyExpenseCell.swift; sourceTree = "<group>"; };
+		CE1FD87227319AEC00935538 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		CE1FD8742731BB9A00935538 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		CE39A90426FF720900A4AD61 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		CE39A90926FFB58A00A4AD61 /* ExpenseDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailsVC.swift; sourceTree = "<group>"; };
 		CE39A90C26FFB59C00A4AD61 /* ExpenseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailsView.swift; sourceTree = "<group>"; };
@@ -157,6 +169,25 @@
 				796E2846640FB007D83AC145 /* Pods_MoneyBox.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE1FD8682731905000935538 /* DailyExpensesList */ = {
+			isa = PBXGroup;
+			children = (
+				CE1FD86F2731990F00935538 /* Subviews */,
+				CE1FD8692731907200935538 /* DailyExpensesListVC.swift */,
+				CE1FD86B273190F800935538 /* DailyExpenses.swift */,
+				CE1FD86D273193F200935538 /* DailyExpensesListManager.swift */,
+			);
+			path = DailyExpensesList;
+			sourceTree = "<group>";
+		};
+		CE1FD86F2731990F00935538 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				CE1FD8702731992400935538 /* DailyExpenseCell.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		CE39A90626FF740000A4AD61 /* Domain */ = {
@@ -298,6 +329,8 @@
 				CEEC38EF26EB3A8B006E1234 /* CGRect+.swift */,
 				CE9F081C272EDA3600A45676 /* AttributedString+.swift */,
 				CE9F0831272F252C00A45676 /* Date+.swift */,
+				CE1FD87227319AEC00935538 /* UIStackView+.swift */,
+				CE1FD8742731BB9A00935538 /* UIViewController+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -365,6 +398,7 @@
 				CEC6621B26ECB8A900F9C187 /* ExpensesList */,
 				CEC6622326ECBBBE00F9C187 /* Categories */,
 				CE39A90826FFB53D00A4AD61 /* ExpenseDetails */,
+				CE1FD8682731905000935538 /* DailyExpensesList */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -441,16 +475,8 @@
 			isa = PBXGroup;
 			children = (
 				CEC6620226EBC5EC00F9C187 /* Base */,
-				CEEC38E426EA7BC9006E1234 /* DailyReview */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		CEEC38E426EA7BC9006E1234 /* DailyReview */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DailyReview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -623,6 +649,7 @@
 				CEC6620126EBC42100F9C187 /* SectionModel.swift in Sources */,
 				CEEC38F626EB4100006E1234 /* UICollectionView+.swift in Sources */,
 				CEC6620526EBEB5B00F9C187 /* CGFloat+.swift in Sources */,
+				CE1FD87327319AEC00935538 /* UIStackView+.swift in Sources */,
 				CEEC38F026EB3A8B006E1234 /* CGRect+.swift in Sources */,
 				CE9F0834272F34C600A45676 /* ExpensesListViewState.swift in Sources */,
 				CEEC38E326EA7B89006E1234 /* DailyReviewCell.swift in Sources */,
@@ -631,19 +658,24 @@
 				CEC652FD26E8EC3C007099B9 /* Optional+.swift in Sources */,
 				CEC6620726EBED7100F9C187 /* SelectCategoryVC.swift in Sources */,
 				CE9F082C272F002F00A45676 /* ExpensesRepository.swift in Sources */,
+				CE1FD86C273190F800935538 /* DailyExpenses.swift in Sources */,
 				CED1644026E949ED0019E451 /* Button.swift in Sources */,
 				CEC652FF26E8EC44007099B9 /* Typealiases.swift in Sources */,
 				CE9F081F272EE17000A45676 /* TextFieldWithInsets.swift in Sources */,
 				CEC652E626E8EB34007099B9 /* ExpensesListVC.swift in Sources */,
 				CEEC38E626EA7BE0006E1234 /* DailyHeaderView.swift in Sources */,
 				CEEC38E826EA846C006E1234 /* DailyReviewListView.swift in Sources */,
+				CE1FD8752731BB9A00935538 /* UIViewController+.swift in Sources */,
 				CE9F0832272F252C00A45676 /* Date+.swift in Sources */,
+				CE1FD8712731992400935538 /* DailyExpenseCell.swift in Sources */,
 				CEC652ED26E8EC13007099B9 /* MessageButton.swift in Sources */,
+				CE1FD86A2731907200935538 /* DailyExpensesListVC.swift in Sources */,
 				CE9825EC26EA2BAE00870C43 /* CardView.swift in Sources */,
 				CEC652F126E8EC20007099B9 /* ExpensesListView.swift in Sources */,
 				CE9F082E272F014100A45676 /* PersistedExpense.swift in Sources */,
 				CE9F081D272EDA3600A45676 /* AttributedString+.swift in Sources */,
 				CE9F0830272F125000A45676 /* ExpensesListManager.swift in Sources */,
+				CE1FD86E273193F200935538 /* DailyExpensesListManager.swift in Sources */,
 				CED1643A26E937C80019E451 /* GeneratedImages.swift in Sources */,
 				CE39A90A26FFB58A00A4AD61 /* ExpenseDetailsVC.swift in Sources */,
 				CE39A90526FF720900A4AD61 /* Expense.swift in Sources */,

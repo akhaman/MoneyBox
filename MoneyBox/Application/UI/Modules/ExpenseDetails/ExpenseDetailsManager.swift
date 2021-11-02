@@ -9,7 +9,8 @@ import Foundation
 
 protocol ExpenseDetailsManagerProtocol {
     func save(output: ExpenseDetails.ViewOutput)
-    func loadState() -> ExpenseDetails.ViewState
+    func loadState()
+    func observe(onStateDidChange: @escaping (ExpenseDetails.ViewState) -> Void)
 }
 
 class ExpenseDetailsManager: ExpenseDetailsManagerProtocol {
@@ -19,6 +20,14 @@ class ExpenseDetailsManager: ExpenseDetailsManagerProtocol {
     private let category: Expense.Category
 
     private var loadedExpense: Expense?
+
+    private var onStateDidChange: ((ExpenseDetails.ViewState) -> Void)?
+
+    private lazy var state = makeEmptyState() {
+        didSet {
+            onStateDidChange?(state)
+        }
+    }
 
     init(
         mode: ExpenseDetails.Mode = .new,
@@ -45,16 +54,19 @@ class ExpenseDetailsManager: ExpenseDetailsManagerProtocol {
         repository.save(expense: expense)
     }
 
-    func loadState() -> ExpenseDetails.ViewState {
+    func loadState() {
         switch mode {
         case .new:
-            return makeEmptyState()
+            state = makeEmptyState()
         case .editing(let expenseId):
             let expense = repository.getExpense(byId: expenseId)
             self.loadedExpense = expense
-            let state = expense.map(makeState(fromExpense:)) ?? makeEmptyState()
-            return state
+            state = expense.map(makeState(fromExpense:)) ?? makeEmptyState()
         }
+    }
+
+    func observe(onStateDidChange: @escaping (ExpenseDetails.ViewState) -> Void) {
+        self.onStateDidChange = onStateDidChange
     }
 }
 
@@ -62,7 +74,7 @@ extension ExpenseDetailsManager {
 
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMMMM"
+        formatter.dateFormat = "dd MMMM"
         return formatter
     }()
 

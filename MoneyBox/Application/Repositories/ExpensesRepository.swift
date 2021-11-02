@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol ExpensesRepositoryProtocol {
     func getExpenses() -> [Expense]
     func getExpense(byId expenseId: String) -> Expense?
+    func getExpensesSortedByTimeInDay(withDate date: Date) -> [Expense]
     func save(expense: Expense)
     func observeChanges(_ completion: @escaping ([Expense]) -> Void) 
 }
@@ -23,11 +25,18 @@ final class ExpensesRepository: ExpensesRepositoryProtocol {
     }
 
     func getExpense(byId expenseId: String) -> Expense? {
-        realmManager.fetchFirst(byId: expenseId)
+        realmManager.fetch(byId: expenseId)
     }
 
     func save(expense: Expense) {
         realmManager.write([expense])
+    }
+
+    func getExpensesSortedByTimeInDay(withDate date: Date) -> [Expense] {
+        let predicate = NSPredicate(format: "date BETWEEN %@", [date.startOfDay, date.endOfDay] as [NSDate])
+        let sortDescriptor = SortDescriptor(keyPath: "date")
+
+        return realmManager.fetch(predicate: predicate, sortDescriptors: sortDescriptor)
     }
 
     func observeChanges(_ completion: @escaping ([Expense]) -> Void) {

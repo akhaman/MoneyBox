@@ -9,7 +9,12 @@ import UIKit
 import SnapKit
 
 class ExpensesListView: UIView {
-    
+
+    // MARK: - Subviews
+
+    private lazy var infoView = InfoView()
+    private lazy var list = DailyReviewListView()
+
     // MARK: - Callbacks
 
     var addExpenseTapped: VoidClosure? {
@@ -21,10 +26,14 @@ class ExpensesListView: UIView {
         }
     }
 
-    // MARK: - Subviews
-
-    private lazy var infoView = InfoView()
-    private lazy var list = DailyReviewListView()
+    var onSelectDailyReview: ((ExpensesListViewState.Daily) -> Void)? {
+        get {
+            list.onSelectDailyReview
+        }
+        set {
+            list.onSelectDailyReview = newValue
+        }
+    }
 
     // MARK: - Init
 

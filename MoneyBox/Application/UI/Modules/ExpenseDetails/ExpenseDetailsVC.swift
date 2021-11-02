@@ -9,10 +9,16 @@ import UIKit
 
 final class ExpenseDetailsVC: UIViewController {
 
+    // MARK: - Dependencies
+
     private let category: Expense.Category
     private let manager: ExpenseDetailsManagerProtocol
-    
+
+    // MARK: - Subviews
+
     private lazy var detailsView = ExpenseDetailsView()
+
+    // MARK: - Initialization
 
     init(category: Expense.Category, manager: ExpenseDetailsManagerProtocol) {
         self.category = category
@@ -33,6 +39,8 @@ final class ExpenseDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupDataObservation()
+        manager.loadState()
     }
 
     // MARK: - Setting Up View
@@ -40,17 +48,19 @@ final class ExpenseDetailsVC: UIViewController {
     private func setupView() {
         configureTitleView()
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: Image.Icon.close.image,
-            style: .plain,
-            target: self,
-            action: #selector(closeButtonDidTap)
-        )
+        if isPresentedController {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(
+                image: Image.Icon.close.image,
+                style: .plain,
+                target: self,
+                action: #selector(closeModule)
+            )
+        }
 
         detailsView.onDoneButtonTapped = { [weak self] output in
             guard let self = self else { return }
             self.manager.save(output: output)
-            self.dismiss(animated: true)
+            self.closeModule()
         }
     }
 
@@ -69,7 +79,17 @@ final class ExpenseDetailsVC: UIViewController {
         navigationItem.titleView = stack
     }
 
-    @objc private func closeButtonDidTap() {
-        dismiss(animated: true)
+    private func setupDataObservation() {
+        manager.observe { [weak self] in self?.detailsView.update(withState: $0) }
+    }
+
+    // MARK: - Navigation
+
+    @objc private func closeModule() {
+        if isPresentedController {
+            dismiss(animated: true)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
     }
 }

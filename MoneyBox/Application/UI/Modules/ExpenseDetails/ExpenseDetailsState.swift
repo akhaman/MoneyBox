@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct ExpenseDetails {
-    
+enum ExpenseDetails {
+
     enum Mode {
         case new
         case editing(expenseId: String)

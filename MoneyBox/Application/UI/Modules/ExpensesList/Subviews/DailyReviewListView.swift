@@ -22,6 +22,10 @@ class DailyReviewListView: UIView {
         return tableView
     }()
 
+    // MARK: - Callbacks
+
+    var onSelectDailyReview: ((ExpensesListViewState.Daily) -> Void)?
+
     // MARK: - State
 
     private var sections: [ExpensesListViewState.Section] = []
@@ -84,6 +88,17 @@ extension DailyReviewListView: UITableViewDelegate {
             return .automaticDimension
         case .dailyExpenses(let dailyModel):
             return Layout.dailyCategoryHeight * CGFloat(dailyModel.expenseCategories.count) + Layout.categoryHeight
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = sections[indexPath.section].items[indexPath.row]
+
+        switch item {
+        case .monthAmount:
+            break
+        case .dailyExpenses(let daily):
+            onSelectDailyReview?(daily)
         }
     }
 }

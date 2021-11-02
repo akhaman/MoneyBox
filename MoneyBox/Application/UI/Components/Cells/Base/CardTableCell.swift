@@ -11,7 +11,7 @@ import SnapKit
 class CardTableCell: UITableViewCell {
     // MARK: - UI
 
-    lazy var cardView = CardView()
+    private(set) lazy var cardView = CardView()
 
     var insets = UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16) {
         didSet {

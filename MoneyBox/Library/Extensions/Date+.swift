@@ -7,6 +7,42 @@
 
 import Foundation
 
+extension Date {
+
+    func equals(with anotherDate: Date, by dateComponents: Calendar.Component...) -> Bool {
+        let componentsSet = Set(dateComponents)
+        let selfComponents = Calendar.current.dateComponents(componentsSet, from: self)
+        let anotherComponents = Calendar.current.dateComponents(componentsSet, from: anotherDate)
+
+        return selfComponents == anotherComponents
+    }
+
+    var isToday: Bool {
+        Calendar.current.isDateInToday(self)
+    }
+
+    static var now: Date {
+        Date()
+    }
+
+    var withoutTime: Date? {
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: self)
+        let date = Calendar.current.date(from: components)
+        return date
+    }
+
+    var startOfDay: Date {
+        Calendar.current.startOfDay(for: self)
+    }
+    // swiftlint:disable force_unwrapping
+    var endOfDay: Date {
+        var components = DateComponents()
+        components.day = 1
+        let date = Calendar.current.date(byAdding: components, to: self.startOfDay)
+        return (date?.addingTimeInterval(-1))!
+    }
+}
+
 protocol Dated {
     var date: Date { get }
 }
@@ -32,25 +68,6 @@ extension Array where Element: Dated {
         }
 
         return groupedByDateComponents
-    }
-}
-
-extension Date {
-
-    func equals(with anotherDate: Date, by dateComponents: Calendar.Component...) -> Bool {
-        let componentsSet = Set(dateComponents)
-        let selfComponents = Calendar.current.dateComponents(componentsSet, from: self)
-        let anotherComponents = Calendar.current.dateComponents(componentsSet, from: anotherDate)
-
-        return selfComponents == anotherComponents
-    }
-
-    var isToday: Bool {
-        Calendar.current.isDateInToday(self)
-    }
-
-    static var now: Date {
-        Date()
     }
 }
 

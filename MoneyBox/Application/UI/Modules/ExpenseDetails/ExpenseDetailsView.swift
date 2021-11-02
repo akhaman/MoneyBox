@@ -25,7 +25,7 @@ final class ExpenseDetailsView: UIView {
     private lazy var doneButton: UIButton = {
         let button = UIButton(type: .system)
         button.contentEdgeInsets = UIEdgeInsets(top: 9, left: 41, bottom: 9, right: 41)
-        button.setTitle("ГОТОВО", for: .normal)
+        button.setTitle("СОХРАНИТЬ", for: .normal)
         button.setTitleColor(Colors.primaryText.color, for: .normal)
         button.backgroundColor = Colors.gradientedBg2End.color
         button.isEnabled = false

@@ -34,13 +34,14 @@ class ExpensesListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupObservation()
+        setupDataObservation()
     }
 
     // MARK: - Setup
 
     private func setupView() {
         title = "Расходы"
+        navigationItem.backButtonTitle = ""
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: Image.Icon.add.image,
             style: .plain,
@@ -49,11 +50,12 @@ class ExpensesListVC: UIViewController {
         )
         
         expensesListView.addExpenseTapped = { [weak self] in self?.openAddExpense() }
+        expensesListView.onSelectDailyReview = { [weak self] in self?.showExpensesInDay(date: $0.date, title: $0.stringDate) }
     }
 
     // MARK: - Data Loading
 
-    private func setupObservation() {
+    private func setupDataObservation() {
         manager.observeStateChanges { [weak self] state in
             self?.expensesListView.update(state: state)
         }
@@ -68,5 +70,12 @@ class ExpensesListVC: UIViewController {
         let navigationController = UINavigationController(navigationBarClass: NavigationBar.self, toolbarClass: nil)
         navigationController.pushViewController(selectCategoryController, animated: false)
         present(navigationController, animated: true)
+    }
+
+    private func showExpensesInDay(date: Date, title: String) {
+        let manager = DailyExpensesListManager(date: date)
+        let viewController = DailyExpensesListVC(manager: manager, title: title)
+        
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

@@ -8,6 +8,7 @@
 import UIKit
 
 class CategoryView: UIView {
+    
     // MARK: - UI
 
     private lazy var iconImageView: UIImageView = {
@@ -51,6 +52,12 @@ class CategoryView: UIView {
         return self
     }
 
+    func update(icon: UIImage, title: String, sumAmount: String) {
+        iconImageView.image = icon
+        titleLabel.text = title
+        sumLabel.text = sumAmount + "₽"
+    }
+
     // MARK: - Helpers
 
     private func setupView() {
@@ -61,7 +68,7 @@ class CategoryView: UIView {
 
         addSubview(stackView)
         stackView.snp.makeConstraints {
-            $0.edges.equalToSuperview().inset(UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
+            $0.edges.equalToSuperview()
         }
 
         iconImageView.snp.makeConstraints { $0.size.equalTo(22) }

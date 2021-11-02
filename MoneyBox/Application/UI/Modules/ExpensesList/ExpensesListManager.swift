@@ -87,7 +87,7 @@ extension ExpensesListManager {
             .sorted { $0.key > $1.key }
             .map(makeCategoryModel(fromCategory: expenses:))
 
-        return ExpensesListViewState.Daily(date: formattedDate, amount: dailyAmount, expenseCategories: dailyExpenses)
+        return ExpensesListViewState.Daily(date: date, stringDate: formattedDate, amount: dailyAmount, expenseCategories: dailyExpenses)
     }
 
     private func makeCategoryModel(fromCategory category: Expense.Category, expenses: [Expense]) -> ExpensesListViewState.Category {
