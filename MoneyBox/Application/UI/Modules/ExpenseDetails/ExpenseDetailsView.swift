@@ -16,7 +16,7 @@ final class ExpenseDetailsView: UIView {
     // MARK: - Subviews
 
     private lazy var dateDescriptionLabel: UILabel = descriptionLabel(withText: "Дата:")
-    private lazy var dateValueLabel: UILabel = descriptionLabel(withText: "cегодня")
+    private lazy var dateValueLabel: UILabel = descriptionLabel(withText: "")
     private lazy var sumLabel: UILabel = descriptionLabel(withText: "Сумма:")
     private lazy var commentLabel: UILabel = descriptionLabel(withText: "Комментарий:")
     private lazy var commentTextField: UITextField = textField(withPlaceholder: "введите заметку", keyboard: .default)
@@ -27,7 +27,7 @@ final class ExpenseDetailsView: UIView {
         button.contentEdgeInsets = UIEdgeInsets(top: 9, left: 41, bottom: 9, right: 41)
         button.setTitle("СОХРАНИТЬ", for: .normal)
         button.setTitleColor(Colors.primaryText.color, for: .normal)
-        button.backgroundColor = Colors.gradientedBg2End.color
+        button.backgroundColor = Colors.gradientedBgEnd.color
         button.isEnabled = false
         button.layer.masksToBounds = true
         button.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)

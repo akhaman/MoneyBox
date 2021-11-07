@@ -25,12 +25,6 @@ extension Date {
         Date()
     }
 
-    var withoutTime: Date? {
-        let components = Calendar.current.dateComponents([.year, .month, .day], from: self)
-        let date = Calendar.current.date(from: components)
-        return date
-    }
-
     var startOfDay: Date {
         Calendar.current.startOfDay(for: self)
     }
@@ -68,14 +62,5 @@ extension Array where Element: Dated {
         }
 
         return groupedByDateComponents
-    }
-}
-
-extension Array {
-
-    func groupedBy<T>(keyPath: KeyPath<Element, T>) -> [T: [Element]] {
-        Dictionary(grouping: self) { element in
-            element[keyPath: keyPath]
-        }
     }
 }

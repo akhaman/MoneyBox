@@ -75,7 +75,7 @@ final class DailyExpensesListVC: UIViewController {
 
     private func showDetails(withExpenseId id: String, category: Expense.Category) {
         let manager = ExpenseDetailsManager(mode: .editing(expenseId: id), category: category)
-        let viewController = ExpenseDetailsVC(category: category, manager: manager)
+        let viewController = ExpenseDetailsVC(manager: manager, title: category.name, titleImage: category.icon)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

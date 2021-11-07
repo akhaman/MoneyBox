@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIView {
+    
     @discardableResult
     func hide() -> Self {
         isHidden = true

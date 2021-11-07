@@ -8,12 +8,14 @@
 import UIKit
 
 extension NSAttributedString {
+    
     var fullRange: NSRange {
         NSRange(location: 0, length: length)
     }
 }
 
 extension String {
+
     var fullRange: NSRange {
         NSRange(location: 0, length: count)
     }

@@ -11,7 +11,6 @@ final class ExpenseDetailsVC: UIViewController {
 
     // MARK: - Dependencies
 
-    private let category: Expense.Category
     private let manager: ExpenseDetailsManagerProtocol
 
     // MARK: - Subviews
@@ -20,10 +19,10 @@ final class ExpenseDetailsVC: UIViewController {
 
     // MARK: - Initialization
 
-    init(category: Expense.Category, manager: ExpenseDetailsManagerProtocol) {
-        self.category = category
+    init(manager: ExpenseDetailsManagerProtocol, title: String, titleImage: UIImage) {
         self.manager = manager
         super.init(nibName: nil, bundle: nil)
+        configureTitleView(withTitle: title, image: titleImage)
     }
 
     required init?(coder: NSCoder) {
@@ -46,7 +45,6 @@ final class ExpenseDetailsVC: UIViewController {
     // MARK: - Setting Up View
 
     private func setupView() {
-        configureTitleView()
 
         if isPresentedController {
             navigationItem.rightBarButtonItem = UIBarButtonItem(
@@ -64,13 +62,13 @@ final class ExpenseDetailsVC: UIViewController {
         }
     }
 
-    private func configureTitleView() {
+    private func configureTitleView(withTitle title: String, image: UIImage) {
         let label = UILabel()
-        label.text = category.name
+        label.text = title
         label.font = .systemFont(ofSize: 17, weight: .medium)
         label.textColor = Colors.primaryText.color
 
-        let imageView = UIImageView(image: category.icon)
+        let imageView = UIImageView(image: image)
 
         let stack = UIStackView(arrangedSubviews: [imageView, label])
         stack.axis = .horizontal

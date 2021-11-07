@@ -13,11 +13,15 @@ protocol ExpenseDetailsManagerProtocol {
     func observe(onStateDidChange: @escaping (ExpenseDetails.ViewState) -> Void)
 }
 
-class ExpenseDetailsManager: ExpenseDetailsManagerProtocol {
+class ExpenseDetailsManager {
+
+    // MARK: - Dependencies
 
     private let repository: ExpensesRepositoryProtocol
     private let mode: ExpenseDetails.Mode
     private let category: Expense.Category
+
+    // MARK: - State
 
     private var loadedExpense: Expense?
 
@@ -29,6 +33,8 @@ class ExpenseDetailsManager: ExpenseDetailsManagerProtocol {
         }
     }
 
+    // MARK: - Initialization
+
     init(
         mode: ExpenseDetails.Mode = .new,
         category: Expense.Category,
@@ -38,6 +44,11 @@ class ExpenseDetailsManager: ExpenseDetailsManagerProtocol {
         self.category = category
         self.mode = mode
     }
+}
+
+// MARK: - ExpenseDetailsManagerProtocol
+
+extension ExpenseDetailsManager: ExpenseDetailsManagerProtocol {
 
     func save(output: ExpenseDetails.ViewOutput) {
         let expense: Expense?
@@ -70,6 +81,8 @@ class ExpenseDetailsManager: ExpenseDetailsManagerProtocol {
     }
 }
 
+// MARK: - Helpers
+
 extension ExpenseDetailsManager {
 
     private static let dateFormatter: DateFormatter = {
@@ -87,6 +100,6 @@ extension ExpenseDetailsManager {
     }
 
     private func makeEmptyState() -> ExpenseDetails.ViewState {
-        ExpenseDetails.ViewState(dateValue: "", sumValue: "", commentValue: "")
+        ExpenseDetails.ViewState(dateValue: "Сегодня", sumValue: "", commentValue: "")
     }
 }

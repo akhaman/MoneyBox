@@ -8,6 +8,7 @@
 import UIKit
 
 extension CGRect {
+    
     init(origin: CGPoint = .zero, width: CGFloat = .zero, height: CGFloat = .zero) {
         self.init(origin: origin, size: CGSize(width: width, height: height))
     }

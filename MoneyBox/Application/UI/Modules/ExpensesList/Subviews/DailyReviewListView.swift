@@ -85,7 +85,7 @@ extension DailyReviewListView: UITableViewDelegate {
 
         switch item {
         case .monthAmount:
-            return .automaticDimension
+            return .tableAutomaticDimension
         case .dailyExpenses(let dailyModel):
             return Layout.dailyCategoryHeight * CGFloat(dailyModel.expenseCategories.count) + Layout.categoryHeight
         }
