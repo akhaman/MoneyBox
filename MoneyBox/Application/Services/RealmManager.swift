@@ -15,10 +15,12 @@ protocol PersistedModelsConvertible {
     static func from(domain: Self) -> Persisted
 }
 
+typealias SortDescriptor = RealmSwift.SortDescriptor
+
 // swiftlint:disable force_try
 class RealmManager<T: PersistedModelsConvertible> {
 
-    private let realm = try! Realm()
+    private let realm = try! Realm(configuration: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
 
     private var token: NotificationToken?
 
