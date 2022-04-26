@@ -1,37 +1,31 @@
 excluded:
-  - ${PWD}/Carthage
-  - ${PWD}/Pods
-  - ${PWD}/DerivedData
+  - Pods
+  - DerivedData
+  - Tests
+  - /**/Generated
 
 disabled_rules:
-  - discarded_notification_center_observer
+  - todo
+  - trailing_whitespace
   - notification_center_detachment
   - orphaned_doc_comment
-  - todo
-  - unused_capture_list
-  - force_cast
-  - vertical_whitespace_opening_braces
-  - trailing_whitespace
 
 opt_in_rules:
-  - array_init
   - attributes
   - closure_end_indentation
   - closure_spacing
   - collection_alignment
-  - colon # promote to error
+  - colon
   - convenience_type
-  - discouraged_object_literal
   - empty_collection_literal
   - empty_count
   - empty_string
-  - enum_case_associated_values_count
   - fatal_error_message
   - first_where
   - force_unwrapping
   - implicitly_unwrapped_optional
+  - indentation_width
   - last_where
-  - legacy_random
   - literal_expression_end_indentation
   - multiline_arguments
   - multiline_function_chains
@@ -39,8 +33,6 @@ opt_in_rules:
   - multiline_parameters
   - multiline_parameters_brackets
   - operator_usage_whitespace
-  - overridden_super_call
-  - pattern_matching_keywords
   - prefer_self_type_over_type_of_self
   - redundant_nil_coalescing
   - redundant_type_annotation
@@ -53,7 +45,6 @@ opt_in_rules:
   - vertical_whitespace_opening_braces
   - yoda_condition
 
-
 custom_rules:
   array_constructor:
     name: "Array/Dictionary initializer"
@@ -62,7 +53,6 @@ custom_rules:
     message: "Use explicit type annotation when initializing empty arrays and dictionaries"
     severity: warning
 
-
 attributes:
   always_on_same_line:
     - "@IBSegueAction"
@@ -70,8 +60,10 @@ attributes:
     - "@NSManaged"
     - "@objc"
 
+force_cast: warning
+force_try: warning
 function_body_length:
-    warning: 40
+    warning: 60
 
 legacy_hashing: error
 
@@ -82,20 +74,15 @@ identifier_name:
     - x
     - y
     - z
-    
-type_name:
-    min_length: 2
 
 line_length:
-  warning: 140
   ignores_urls: true
-  ignores_function_declarations: true
   ignores_comments: true
 
 multiline_arguments:
   first_argument_location: next_line
   only_enforce_after_first_closure_on_first_line: true
-
+  
 private_over_fileprivate:
   validate_extensions: true
 
